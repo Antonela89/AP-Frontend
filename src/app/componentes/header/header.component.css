@@ -1,0 +1,18 @@
+.container-fluid, .container-fluid .row, .container-fluid .row app-logo {
+    padding: 0;
+    margin: 0;
+}
+
+/*Responsivo para pantallas menores a 375px*/
+@media only screen and (max-width: 375px) {
+    .container-fluid, .container-fluid .row, .container-fluid .row app-logo {
+        height: 45vh;
+    }
+}
+
+/*Responsivo para pantallas menores a 320px*/
+@media only screen and (max-width: 320px) {
+    .container-fluid, .container-fluid .row, .container-fluid .row app-logo {
+        height: 40vh;
+    }
+}

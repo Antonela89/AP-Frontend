@@ -1,0 +1,34 @@
+.container-fluid{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.row{
+    display: flex;
+    padding: 15px;
+    margin: 0;
+    align-items: center;
+}
+
+.row #fotoYtitulo{
+    display: flex;
+}
+
+.row #foto .img-fluid {
+    border-radius: 50%;
+}
+
+.row div #nombre, .row div p, .row div span h4 {
+    text-align: center;
+}
+
+@media only screen and (max-width:768px) {
+    .row #fotoYtitulo{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
