@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/model/login-usuario';
 import { AuthService } from 'src/app/service/auth.service';
 import { TokenService } from 'src/app/service/token.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -11,20 +11,15 @@ import { TokenService } from 'src/app/service/token.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  form: FormGroup;
   nombreUsuario!: string;
   password!: string;
-  isLogged = false;
+  isLogged = environment.isLogged;
   isLogginFail = false;
   loginUsuario!: LoginUsuario;
   roles: string[] = [];
   errMsj!: string;
 
-  constructor(private formBuilder:FormBuilder, private tokenService: TokenService, private authService: AuthService, private router: Router){
-    this.form=this.formBuilder.group({
-    nombreUsuario: ['',[Validators.required]],
-    password: ['', [Validators.required,Validators.minLength(8)]]
-    });
+  constructor(private tokenService: TokenService, private authService: AuthService, private router: Router){
   }
 
   get Usuario() {

@@ -10,14 +10,15 @@
                 Por favor, ingresar usuario y clave
               </p>
 
-              <form [formGroup]="form" (ngSubmit)="onLogin($event)" novalidate>
+              <form #form = ngForm (ngSubmit)="onLogin($event)" novalidate>
                 <div class="form-outline form-white mb-4">
                   <input
                     type="text"
-                    [formControlName]="nombreUsuario"
+                    name="nombreUsuario"
                     id="nombreUsuario"
                     class="form-control form-control-lg"
-                    [ngClass]="{
+                    [(ngModel)]="nombreUsuario" required 
+                    ngClass="{
                       'is-invalid': Usuario?.errors && Usuario?.touched,
                       'is-valid': !Usuario?.errors && Usuario?.touched
                     }"
@@ -33,10 +34,11 @@
                 <div class="form-outline form-white mb-4">
                   <input
                     type="password"
-                    [formControlName]="password"
+                    name="password"
                     id="password"
                     class="form-control form-control-lg"
-                    [ngClass]="{
+                    [(ngModel)] = "password" required
+                    ngClass="{
                       'is-invalid': Password?.errors && Password?.touched,
                       'is-valid': !Password?.errors && Password?.touched
                     }"

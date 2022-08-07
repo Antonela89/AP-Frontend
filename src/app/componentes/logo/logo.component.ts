@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {} from '@angular/animations';
 import {TokenService} from 'src/app/service/token.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -10,7 +11,7 @@ import {TokenService} from 'src/app/service/token.service';
   animations: []
 })
 export class LogoComponent implements OnInit {
-  isLogged = false;
+  isLogged = environment.isLogged;
 
   constructor(private tokenService: TokenService) { }
 

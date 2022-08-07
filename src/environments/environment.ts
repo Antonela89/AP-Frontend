@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  Api:'http://localhost:8080'
+  Api:'http://localhost:8080',
+  isLogged: true
 };
 
 /*
