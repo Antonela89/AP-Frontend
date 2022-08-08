@@ -17,10 +17,10 @@ export class AuthService {
   }
 
   public nuevo(nuevoUsuario: NuevoUsuario): Observable<any> {
-    return this.httpClient.post<any>(this.ApiServerUrl + '/auth/nuevo', nuevoUsuario);
+    return this.httpClient.post<any>(`${this.ApiServerUrl}/auth/nuevo`, nuevoUsuario);
   }
 
   public login(loginUsuario: LoginUsuario): Observable<JwtDto> {
-    return this.httpClient.post<JwtDto>(this.ApiServerUrl + '/auth/login', loginUsuario)
+    return this.httpClient.post<JwtDto>(`${this.ApiServerUrl}/auth/login`, loginUsuario)
   }
 }

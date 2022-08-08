@@ -20,9 +20,16 @@
 #encabezado .redes {
     display: flex;
     margin-right: 12px;
+    align-items: center;
 }
+
 #encabezado .redes img {
     width: 30px;
+    margin: 0px 3px;
+}
+
+#encabezado .redes #ingreso img {
+    width: 45px;
     margin: 0px 3px;
 }
 

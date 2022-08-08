@@ -22,13 +22,13 @@ export class LoginComponent implements OnInit {
   constructor(private tokenService: TokenService, private authService: AuthService, private router: Router){
   }
 
-  get Usuario() {
+  /*get Usuario() {
     return this.form.get('nombreUsuario');
   }
 
   get Password() {
     return this.form.get('password');
-  }
+  }*/
 
   ngOnInit(): void {
     if(this.tokenService.getToken()) {
