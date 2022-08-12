@@ -1,5 +1,6 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { persona } from 'src/app/model/persona';
+import { Persona } from 'src/app/model/persona';
 import { PersonaService } from 'src/app/service/persona.service';
 
 
@@ -10,13 +11,20 @@ import { PersonaService } from 'src/app/service/persona.service';
 })
 
 export class AcercaDeComponent implements OnInit {
-
-  persona:persona = new persona('','','','','');
-
-  constructor(public personaService: PersonaService) { }
+  public persona: Persona | undefined;
+  public editPersona: Persona | undefined;
+  
+  constructor(private personaService: PersonaService) { }
 
   ngOnInit(): void {
-    this.personaService.getPersona().subscribe(data => {this.persona = data})
+    this.getPersona();
     }
   
+    public getPersona(): void {
+    this.personaService.getPersona().subscribe({
+      next: (data: Persona) => {this.persona = data;
+      }, error: (error: HttpErrorResponse) => {
+        alert(error.message);}
+      })
+    }
 }
