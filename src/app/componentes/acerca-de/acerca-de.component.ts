@@ -11,8 +11,7 @@ import { PersonaService } from 'src/app/service/persona.service';
 })
 
 export class AcercaDeComponent implements OnInit {
-  public persona: Persona | undefined;
-  public editPersona: Persona | undefined;
+persona: Persona = new Persona ("","","","","");
   
   constructor(private personaService: PersonaService) { }
 
@@ -22,7 +21,7 @@ export class AcercaDeComponent implements OnInit {
   
     public getPersona(): void {
     this.personaService.getPersona().subscribe({
-      next: (data: Persona) => {this.persona = data;
+      next: (response: Persona) => {this.persona = response;
       }, error: (error: HttpErrorResponse) => {
         alert(error.message);}
       })

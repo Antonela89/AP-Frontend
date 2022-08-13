@@ -1,9 +1,9 @@
 <div class="container-fluid">
-    <div class="row">
+    <div class="row" *ngFor="let skills of listaSkills">
         <h1>Hard y Soft Skills</h1>
         <div class="col-sm-4 col-md-4 col-lg-4">
             <circle-progress
-            [percent]="75"
+            [percent]="(skills.porcentaje)"
             [radius]="80"
             [outerStrokeWidth]="15"
             [innerStrokeWidth]="5"
@@ -13,65 +13,19 @@
             [animationDuration]="600"
             ></circle-progress>
         </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <circle-progress
-            [percent]="75"
-            [radius]="80"
-            [outerStrokeWidth]="15"
-            [innerStrokeWidth]="5"
-            [outerStrokeColor]="'#38bbc3'"
-            [innerStrokeColor]="'#ae3452'"
-            [animation]="true"
-            [animationDuration]="600"
-            ></circle-progress>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <circle-progress
-            [percent]="75"
-            [radius]="80"
-            [outerStrokeWidth]="15"
-            [innerStrokeWidth]="5"
-            [outerStrokeColor]="'#38bbc3'"
-            [innerStrokeColor]="'#ae3452'"
-            [animation]="true"
-            [animationDuration]="600"
-            ></circle-progress>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <circle-progress
-            [percent]="75"
-            [radius]="80"
-            [outerStrokeWidth]="15"
-            [innerStrokeWidth]="5"
-            [outerStrokeColor]="'#38bbc3'"
-            [innerStrokeColor]="'#ae3452'"
-            [animation]="true"
-            [animationDuration]="600"
-            ></circle-progress>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <circle-progress
-            [percent]="75"
-            [radius]="80"
-            [outerStrokeWidth]="15"
-            [innerStrokeWidth]="5"
-            [outerStrokeColor]="'#38bbc3'"
-            [innerStrokeColor]="'#ae3452'"
-            [animation]="true"
-            [animationDuration]="600"
-            ></circle-progress>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <circle-progress
-            [percent]="75"
-            [radius]="80"
-            [outerStrokeWidth]="15"
-            [innerStrokeWidth]="5"
-            [outerStrokeColor]="'#38bbc3'"
-            [innerStrokeColor]="'#ae3452'"
-            [animation]="true"
-            [animationDuration]="600"
-            ></circle-progress>
+        <div class="col-text-center" id="botones">
+            <a class="btn btn-primary tooltips"
+            data-placement="top" 
+            data-toggle="tooltip"
+            data-original-title="Edit">
+            <i class="fa fa-pencil"></i>
+            </a>
+            <a class="btn btn-danger delete"
+                data-placement="top" 
+                data-toggle="tooltip"
+                data-original-title="Delete">
+            <i class="fa fa-times"></i>
+            </a>
         </div>
     </div>
 </div>

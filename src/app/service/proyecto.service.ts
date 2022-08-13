@@ -8,23 +8,23 @@ import { Proyecto } from '../model/proyecto';
   providedIn: 'root'
 })
 export class ProyectoService {
-  ApiServerUrl = environment.Api;
+  private ApiProyecto = `${environment.Api}/proyecto/`;
 
   constructor(private http: HttpClient) { }
 
   public getProyecto(): Observable<Proyecto[]> {
-    return this.http.get<Proyecto[]>(`${this.ApiServerUrl}/proyecto/ver`);
+    return this.http.get<Proyecto[]>(`${this.ApiProyecto}ver`);
   }
 
   public createProyecto(proyecto: Proyecto): Observable<Proyecto> {
-    return this.http.post<Proyecto>(`${this.ApiServerUrl}/proyecto/nuevo`, proyecto);
+    return this.http.post<Proyecto>(`${this.ApiProyecto}nuevo`, proyecto);
   }
 
   public deleteProyecto(id: number): Observable<Proyecto> {
-    return this.http.delete<Proyecto>(`${this.ApiServerUrl}/proyecto/borrar/${id}`);
+    return this.http.delete<Proyecto>(`${this.ApiProyecto}borrar/${id}`);
   }
 
   public updateProyecto(proyecto: Proyecto, id: number): Observable<Proyecto> {
-    return this.http.put<Proyecto>(`${this.ApiServerUrl}/proyecto/editar/${id}`, proyecto);
+    return this.http.put<Proyecto>(`${this.ApiProyecto}editar/${id}`, proyecto);
   }
 }

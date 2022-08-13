@@ -15,14 +15,13 @@ export class EducacionComponent implements OnInit {
   constructor(private educacionService: EducacionService) { }
 
   ngOnInit(): void {
-    this.getEducacion();
+    this.getEducaciones();
   }
 
-  public getEducacion(){
+  public getEducaciones(){
     this.educacionService.getEducacion().subscribe({
       next:(Response: Educacion[]) => {this.listaEducacion = Response;
-      }, error: (error: HttpErrorResponse) => {
-        alert(error.message);}
-      })
+      }, error: (error: HttpErrorResponse) => {alert(error.message);
+      }})
     }
 }

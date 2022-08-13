@@ -8,23 +8,23 @@ import { Educacion } from '../model/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
-  ApiServerUrl = environment.Api;
+  private ApiEducacion = `${environment.Api}/educacion/`;
 
   constructor(private http: HttpClient) { }
 
   public getEducacion(): Observable<Educacion[]> {
-    return this.http.get<Educacion[]>(`${this.ApiServerUrl}/educacion/ver`);
+    return this.http.get<Educacion[]>(`${this.ApiEducacion}ver`);
   }
 
   public createEducacion(educacion: Educacion): Observable<Educacion> {
-    return this.http.post<Educacion>(`${this.ApiServerUrl}/educacion/nuevo`, educacion);
+    return this.http.post<Educacion>(`${this.ApiEducacion}nuevo`, educacion);
   }
 
   public deleteEducacion(id: number): Observable<Educacion> {
-    return this.http.delete<Educacion>(`${this.ApiServerUrl}/educacion/borrar/${id}`);
+    return this.http.delete<Educacion>(`${this.ApiEducacion}borrar/${id}`);
   }
 
   public updateEducacion(educacion: Educacion, id: number): Observable<Educacion> {
-    return this.http.put<Educacion>(`${this.ApiServerUrl}/educacion/editar/${id}`, educacion);
+    return this.http.put<Educacion>(`${this.ApiEducacion}editar/${id}`, educacion);
   }
 }

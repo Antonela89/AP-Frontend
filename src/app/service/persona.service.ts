@@ -9,23 +9,23 @@ import { Persona } from '../model/persona';
 })
 
 export class PersonaService {
-  ApiServerUrl = environment.Api;
+  private ApiPersona = `${environment.Api}/persona/`;
 
   constructor(private http: HttpClient){ }
 
   public getPersona(): Observable<Persona> {
-    return this.http.get<Persona>(`${this.ApiServerUrl}/persona/ver`);
+    return this.http.get<Persona>(`${this.ApiPersona}ver/perfil`);
   }
 
   public createPersona(persona: Persona): Observable<Persona> {
-    return this.http.post<Persona>(`${this.ApiServerUrl}/persona/nuevo`, persona);
+    return this.http.post<Persona>(`${this.ApiPersona}nuevo`, persona);
   }
 
   public deletePersona(id: number): Observable<Persona> {
-    return this.http.delete<Persona>(`${this.ApiServerUrl}/persona/borrar/${id}`);
+    return this.http.delete<Persona>(`${this.ApiPersona}borrar/${id}`);
   }
 
   public updatePersona(persona: Persona, id: number): Observable<Persona> {
-    return this.http.put<Persona>(`${this.ApiServerUrl}/persona/editar/${id}`, persona);
+    return this.http.put<Persona>(`${this.ApiPersona}editar/${id}`, persona);
   }
 }

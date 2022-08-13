@@ -8,23 +8,23 @@ import { Skills } from '../model/skills';
   providedIn: 'root'
 })
 export class SkillsService {
-  ApiServerUrl = environment.Api;
+  private ApiSkills = `${environment.Api}/skills/`;
 
   constructor(private http: HttpClient) { }
 
   public getSkills(): Observable<Skills[]> {
-    return this.http.get<Skills[]>(`${this.ApiServerUrl}/skills/ver`);
+    return this.http.get<Skills[]>(`${this.ApiSkills}ver`);
   }
 
   public createSkills(skills: Skills): Observable<Skills> {
-    return this.http.post<Skills>(`${this.ApiServerUrl}/skills/nuevo`, skills);
+    return this.http.post<Skills>(`${this.ApiSkills}nuevo`, skills);
   }
 
   public deleteSkills(id: number): Observable<Skills> {
-    return this.http.delete<Skills>(`${this.ApiServerUrl}/skills/borrar/${id}`);
+    return this.http.delete<Skills>(`${this.ApiSkills}borrar/${id}`);
   }
 
   public updateSkills(skills: Skills, id: number): Observable<Skills> {
-    return this.http.put<Skills>(`${this.ApiServerUrl}/skills/editar/${id}`, skills);
+    return this.http.put<Skills>(`${this.ApiSkills}editar/${id}`, skills);
   }
 }

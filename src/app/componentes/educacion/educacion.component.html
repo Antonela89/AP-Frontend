@@ -1,14 +1,30 @@
 <div class="container-fluid">
     <div class="row" *ngFor="let educacion of listaEducacion">
         <h1>Educación</h1>
-        <div clas="col-lg-10">
+        <div class="col-lg-10">
             <div class="col-8">
-
+                <p>{{educacion.institucion}}</p>
             </div>
             <div class="col-8">
-
+                <p>{{educacion.anoInicio}} - {{educacion.anoFin}}</p>
             </div>
-            
+            <div class="col-8">
+                <p>{{educacion.titulo}}</p>
+            </div>
+            <div class="col-text-center" id="botones">
+                <a class="btn btn-primary tooltips"
+                data-placement="top" 
+                data-toggle="tooltip"
+                data-original-title="Edit">
+                <i class="fa fa-pencil"></i>
+                </a>
+                <a class="btn btn-danger delete"
+                    data-placement="top" 
+                    data-toggle="tooltip"
+                    data-original-title="Delete">
+                <i class="fa fa-times"></i>
+                </a>
+            </div>
         </div>
     </div>
 </div>

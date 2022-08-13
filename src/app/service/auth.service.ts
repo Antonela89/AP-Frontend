@@ -10,17 +10,17 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  ApiServerUrl = environment.Api;
+  private ApiServerUrl = `${environment.Api}/auth/`;
 
   constructor(private httpClient: HttpClient) { 
     console.log("El servicio de autenticación está corriendo")
   }
 
   public nuevo(nuevoUsuario: NuevoUsuario): Observable<any> {
-    return this.httpClient.post<any>(`${this.ApiServerUrl}/auth/nuevo`, nuevoUsuario);
+    return this.httpClient.post<any>(`${this.ApiServerUrl}nuevo`, nuevoUsuario);
   }
 
   public login(loginUsuario: LoginUsuario): Observable<JwtDto> {
-    return this.httpClient.post<JwtDto>(`${this.ApiServerUrl}/auth/login`, loginUsuario)
+    return this.httpClient.post<JwtDto>(`${this.ApiServerUrl}login`, loginUsuario)
   }
 }

@@ -8,23 +8,23 @@ import { Experiencia } from '../model/experiencia';
   providedIn: 'root'
 })
 export class ExperienciaService {
-ApiServerUrl = environment.Api;
+  private ApiExperiencia = `${environment.Api}/experiencia/`;
 
   constructor(private http: HttpClient) { }
 
   public getExperiencia(): Observable<Experiencia[]> {
-    return this.http.get<Experiencia[]>(`${this.ApiServerUrl}/experiencia/ver`);
+    return this.http.get<Experiencia[]>(`${this.ApiExperiencia}ver`);
   }
 
   public createExperiencia(experiencia: Experiencia): Observable<Experiencia> {
-    return this.http.post<Experiencia>(`${this.ApiServerUrl}/experiencia/nuevo`, experiencia);
+    return this.http.post<Experiencia>(`${this.ApiExperiencia}nuevo`, experiencia);
   }
 
   public deleteExperiencia(id: number): Observable<Experiencia> {
-    return this.http.delete<Experiencia>(`${this.ApiServerUrl}/experiencia/borrar/${id}`);
+    return this.http.delete<Experiencia>(`${this.ApiExperiencia}/borrar/${id}`);
   }
 
   public updateExperiencia(experiencia: Experiencia, id: number): Observable<Experiencia> {
-    return this.http.put<Experiencia>(`${this.ApiServerUrl}/experiencia/editar/${id}`, experiencia);
+    return this.http.put<Experiencia>(`${this.ApiExperiencia}editar/${id}`, experiencia);
   }
 }
