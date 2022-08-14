@@ -20,11 +20,11 @@ export class ProyectoService {
     return this.http.post<Proyecto>(`${this.ApiProyecto}nuevo`, proyecto);
   }
 
-  public deleteProyecto(id: number): Observable<Proyecto> {
-    return this.http.delete<Proyecto>(`${this.ApiProyecto}borrar/${id}`);
+  public deleteProyecto(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.ApiProyecto}borrar/${id}`);
   }
 
   public updateProyecto(proyecto: Proyecto, id: number): Observable<Proyecto> {
-    return this.http.put<Proyecto>(`${this.ApiProyecto}editar/${id}`, proyecto);
+    return this.http.put<Proyecto>(`${this.ApiProyecto}editar/${id}?nombreProyecto=${proyecto.nombreProyecto}&descripcion=${proyecto.descripcion}&anoInurlProyicio=${proyecto.urlProy}&fotoProyeto=${proyecto.fotoProyeto}`, proyecto);
   }
 }

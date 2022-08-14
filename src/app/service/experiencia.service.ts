@@ -20,11 +20,11 @@ export class ExperienciaService {
     return this.http.post<Experiencia>(`${this.ApiExperiencia}nuevo`, experiencia);
   }
 
-  public deleteExperiencia(id: number): Observable<Experiencia> {
-    return this.http.delete<Experiencia>(`${this.ApiExperiencia}/borrar/${id}`);
+  public deleteExperiencia(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.ApiExperiencia}/borrar/${id}`);
   }
 
   public updateExperiencia(experiencia: Experiencia, id: number): Observable<Experiencia> {
-    return this.http.put<Experiencia>(`${this.ApiExperiencia}editar/${id}`, experiencia);
+    return this.http.put<Experiencia>(`${this.ApiExperiencia}editar/${id}?empresa=${experiencia.empresa}&anoInicio=${experiencia.anoInicio}&anoFin=${experiencia.anoFin}&descripcion=${experiencia.descripcion}`, experiencia);
   }
 }

@@ -20,11 +20,11 @@ export class EducacionService {
     return this.http.post<Educacion>(`${this.ApiEducacion}nuevo`, educacion);
   }
 
-  public deleteEducacion(id: number): Observable<Educacion> {
-    return this.http.delete<Educacion>(`${this.ApiEducacion}borrar/${id}`);
+  public deleteEducacion(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.ApiEducacion}borrar/${id}?institucion=`);
   }
 
   public updateEducacion(educacion: Educacion, id: number): Observable<Educacion> {
-    return this.http.put<Educacion>(`${this.ApiEducacion}editar/${id}`, educacion);
+    return this.http.put<Educacion>(`${this.ApiEducacion}editar/${id}?institucion=${educacion.institucion}&titulo=${educacion.titulo}&anoInicio=${educacion.anoInicio}&anoFin=${educacion.anoFin}`, educacion);
   }
 }

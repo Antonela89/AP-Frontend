@@ -21,8 +21,8 @@ export class PersonaService {
     return this.http.post<Persona>(`${this.ApiPersona}nuevo`, persona);
   }
 
-  public deletePersona(id: number): Observable<Persona> {
-    return this.http.delete<Persona>(`${this.ApiPersona}borrar/${id}`);
+  public deletePersona(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.ApiPersona}borrar/${id}`);
   }
 
   public updatePersona(persona: Persona, id: number): Observable<Persona> {

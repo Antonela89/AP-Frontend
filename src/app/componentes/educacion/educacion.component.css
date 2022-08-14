@@ -1,8 +1,13 @@
-.container-fluid {
+#educacion {
     width: 100%;
     background-color: #0c0c2c;
     padding: 0;
     margin: 0;
+}
+
+#titulo{
+    display: flex;
+    justify-content: space-between;
 }
 
 .row {
@@ -10,7 +15,7 @@
     margin: 0;
 }
 
-.row h1, .row div ul li h1, p {
+h1, .row div ul li h1, p {
     color: white;
 }
 

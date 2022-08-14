@@ -1,14 +1,15 @@
 export class Proyecto {
-    idProy?: number;
+    idProy: number;
 	nombreProyecto: string;
 	descripcion: string;
-	url: string;
+	urlProy: string;
 	fotoProyeto: string;
 
-    constructor(nombreProyecto: string, descripcion: string, url: string, fotoProyeto: string){
-    this.nombreProyecto = nombreProyecto;
+    constructor(idProy: number, nombreProyecto: string, descripcion: string, urlProy: string, fotoProyeto: string){
+    this.idProy = idProy;
+	this.nombreProyecto = nombreProyecto;
 	this.descripcion = descripcion;
-	this.url = url;
+	this.urlProy = urlProy;
 	this.fotoProyeto = fotoProyeto;
     }
 

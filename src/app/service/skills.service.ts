@@ -20,11 +20,11 @@ export class SkillsService {
     return this.http.post<Skills>(`${this.ApiSkills}nuevo`, skills);
   }
 
-  public deleteSkills(id: number): Observable<Skills> {
-    return this.http.delete<Skills>(`${this.ApiSkills}borrar/${id}`);
+  public deleteSkills(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.ApiSkills}borrar/${id}`);
   }
 
   public updateSkills(skills: Skills, id: number): Observable<Skills> {
-    return this.http.put<Skills>(`${this.ApiSkills}editar/${id}`, skills);
+    return this.http.put<Skills>(`${this.ApiSkills}editar/${id}?nombreSkill=${skills.nombreSkill}&fotoSkill=${skills.fotoSkill}&porcentaje=${skills.porcentaje}`, skills);
   }
 }
