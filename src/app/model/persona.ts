@@ -1,12 +1,13 @@
 export class Persona {
-    id?: number;
+    id: number;
     nombre: string;
     apellido: string;
     titulo: string;
     acercaMi: string;
     urlFoto: string;
 
-    constructor(nombre: string, apellido:string, titulo: string, acercaMi: string, urlFoto: string){
+    constructor(id: number, nombre: string, apellido:string, titulo: string, acercaMi: string, urlFoto: string){
+        this.id = id,
         this.nombre = nombre,
         this.apellido = apellido,
         this.titulo = titulo,

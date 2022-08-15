@@ -25,6 +25,6 @@ export class ProyectoService {
   }
 
   public updateProyecto(proyecto: Proyecto, id: number): Observable<Proyecto> {
-    return this.http.put<Proyecto>(`${this.ApiProyecto}editar/${id}?nombreProyecto=${proyecto.nombreProyecto}&descripcion=${proyecto.descripcion}&anoInurlProyicio=${proyecto.urlProy}&fotoProyeto=${proyecto.fotoProyeto}`, proyecto);
+    return this.http.put<Proyecto>(`${this.ApiProyecto}editar/${id}?nombreProyecto=${proyecto.nombreProyecto}&descripcion=${proyecto.descripcion}&url=${proyecto.url}&fotoProyecto=${proyecto.fotoProyecto}`, proyecto);
   }
 }

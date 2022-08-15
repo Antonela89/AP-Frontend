@@ -3,7 +3,7 @@
         <h1 class="mt-5 mx-5">Hard y Soft Skills</h1>
         <!--Boton agregar Skills-->
         <button type="button" class="btn btn-info text-light" data-bs-toggle="modal"
-            data-bs-target="#agregarModalSkills" data-bs-whatever="agregarModalSkills" (click)="openModal('agregar')">
+            data-bs-target="#agregarModalSkills" data-bs-whatever="agregarModalSkills" (click)="openModal('agregar')" *ngIf="isLogged">
             Agregar Skill
         </button>
     </div>
@@ -16,33 +16,29 @@
         </div>
     </div>
 
-    <div class="row" *ngFor="let skills of listaSkills">
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <circle-progress 
-            [percent]="(skills.porcentaje)" 
-            [radius]="80" [outerStrokeWidth]="15"
-            [title]="(skills.nombreSkill)"
-            [imageSrc]="(skills.fotoSkill)"
-            [innerStrokeWidth]="5" 
-            [outerStrokeColor]="'#38bbc3'" 
-            [innerStrokeColor]="'#ae3452'" 
-            [animation]="true"
-            [animationDuration]="600">
+    <div id="contenedor_skills">
+        <div class="contenedor_skills_hijo" *ngFor="let skills of listaSkills">
+            <circle-progress [percent]="(skills.porcentaje)" [radius]="80" [outerStrokeWidth]="15"
+                [title]="(skills.nombreSkill)" [imageSrc]="skills.fotoSkill" [imageHeight]="100" [imageWidth]="100"
+                [showImage]="true" [innerStrokeWidth]="5" [outerStrokeColor]="'#38bbc3'" [innerStrokeColor]="'#ae3452'"
+                [animation]="true" [animationDuration]="600">
             </circle-progress>
-        </div>
-        <div class="col-text-center" id="botones">
+
             <div class="col-text-center" id="botones">
-                <a (click)="openModal('editar', skills)" class="btn btn-primary tooltips" data-bs-placement="top"
-                    data-bs-toggle="modal" data-original-title="Edit" data-bs-target="#editarModalSkills">
-                    <i class="fa fa-pencil"></i>
-                </a>
-                <a (click)="openModal('eliminar', skills)" class="btn btn-danger delete" data-bs-placement="top"
-                    data-bs-toggle="modal" data-original-title="Delete" data-bs-target="#eliminarModalSkills">
-                    <i class="fa fa-times"></i>
-                </a>
+                <div class="col-text-center" id="botones">
+                    <a (click)="openModal('editar', skills)" class="btn btn-primary tooltips" data-bs-placement="top"
+                        data-bs-toggle="modal" data-original-title="Edit" data-bs-target="#editarModalSkills" *ngIf="isLogged">
+                        <i class="fa fa-pencil"></i>
+                    </a>
+                    <a (click)="openModal('eliminar', skills)" class="btn btn-danger delete" data-bs-placement="top"
+                        data-bs-toggle="modal" data-original-title="Delete" data-bs-target="#eliminarModalSkills" *ngIf="isLogged">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+
 </div>
 
 <!--Formularios:modal-->
@@ -91,7 +87,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editarSkillsModalLabel">Editar Educación {{modificarSkills?.idSkill}}
+                <h5 class="modal-title" id="editarSkillsModalLabel">Editar Skill: {{modificarSkills?.nombreSkill}}
                 </h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -110,7 +106,7 @@
                             name="fotoSkill" class="form-control" id="fotoSkill" required>
                     </div>
                     <div class="form-group">
-                        <label for="porcentaje" class="col-form-label">Año Inicio</label>
+                        <label for="porcentaje" class="col-form-label">Porcentaje</label>
                         <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarSkills?.porcentaje}}"
                             name="porcentaje" class="form-control" id="porcentaje" required>
                     </div>
@@ -132,13 +128,13 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="eliminarSkillsModalLabel">Eliminar Skills</h5>
+                <h5 class="modal-title" id="eliminarSkillsModalLabel">Eliminar Skill</h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p class="text-dark">¿Estás seguro de eliminar esta Skills: {{borrarSkills?.nombreSkill}}?</p>
+                <p class="text-dark">¿Estás seguro de eliminar esta Skill?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>

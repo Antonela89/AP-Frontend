@@ -2,6 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Skills } from 'src/app/model/skills';
 import { SkillsService } from 'src/app/service/skills.service';
+import { TokenService } from 'src/app/service/token.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-hard-ysoft',
@@ -13,11 +15,17 @@ export class HardYSoftComponent implements OnInit {
   public modificarSkills: Skills | undefined;
   public borrarSkills: Skills | undefined;
   public formToSend: any = {};
+  isLogged = environment.isLogged;
 
-  constructor(private skillsService: SkillsService) { }
+  constructor(private tokenService: TokenService, private skillsService: SkillsService) { }
 
   ngOnInit(): void {
     this.getSkills();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
   public getSkills() {

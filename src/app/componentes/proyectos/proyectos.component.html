@@ -2,8 +2,9 @@
     <div>
         <h1 class="mt-5 mx-5">Proyectos</h1>
         <!--Boton agregar Proyecto-->
-        <button type="button" class="btn btn-info text-light" data-bs-toggle="modal" data-bs-target="#agregarModalProyecto"
-            data-bs-whatever="agregarModalProyecto" (click)="openModal('agregar')">
+        <button type="button" class="btn btn-info text-light" data-bs-toggle="modal"
+            data-bs-target="#agregarModalProyecto" data-bs-whatever="agregarModalProyecto"
+            (click)="openModal('agregar')" *ngIf="isLogged">
             Agregar Proyecto
         </button>
     </div>
@@ -20,19 +21,19 @@
         <div class="col-sm-12 col-md-9 col-lg-9" id="descripcción">
             <h1>{{proyecto.nombreProyecto}}</h1>
             <p>{{proyecto.descripcion}}</p>
-            <p>{{proyecto.urlProy}}</p>
+            <a href="{{proyecto.url}}" target="_blank">Ir al proyecto</a>
         </div>
         <div class="col-sm-12 col-md-3 col-lg-3" id="imagen_proyecto">
-            <img src="{{proyecto.fotoProyeto}}" alt="" class="img-fluid">
+            <img src="{{proyecto.fotoProyecto}}" alt="proyecto.name image" class="img-fluid">
         </div>
         <div class="col-text-center" id="botones">
             <div class="col-text-center" id="botones">
                 <a (click)="openModal('editar', proyecto)" class="btn btn-primary tooltips" data-bs-placement="top"
-                    data-bs-toggle="modal" data-original-title="Edit" data-bs-target="#editarModalProyecto">
+                    data-bs-toggle="modal" data-original-title="Edit" data-bs-target="#editarModalProyecto" *ngIf="isLogged">
                     <i class="fa fa-pencil"></i>
                 </a>
                 <a (click)="openModal('eliminar', proyecto)" class="btn btn-danger delete" data-bs-placement="top"
-                    data-bs-toggle="modal" data-original-title="Delete" data-bs-target="#eliminarModalProyecto">
+                    data-bs-toggle="modal" data-original-title="Delete" data-bs-target="#eliminarModalProyecto" *ngIf="isLogged">
                     <i class="fa fa-times"></i>
                 </a>
             </div>
@@ -55,24 +56,24 @@
             <div class="modal-body">
                 <form #agregarForm="ngForm">
                     <div class="form-group">
-                        <label for="nombreProyecto" class="col-form-label">nombreProyecto</label>
+                        <label for="nombreProyecto" class="col-form-label">Nombre Proyecto</label>
                         <input type="text" (keyup)="handleChange($event)" ngModel name="nombreProyecto"
                             class="form-control" id="institucion" required>
                     </div>
                     <div class="form-group">
                         <label for="descripcion" class="col-form-label">Descripción</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="descripcion" class="form-control"
-                            id="titulo" required>
+                        <input type="text" (keyup)="handleChange($event)" ngModel name="descripcion"
+                            class="form-control" id="titulo" required>
                     </div>
                     <div class="form-group">
-                        <label for="urlProy" class="col-form-label">Url Proyecto</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="urlProy" class="form-control"
-                            id="urlProy" required>
+                        <label for="url" class="col-form-label">Url Proyecto</label>
+                        <input type="text" (keyup)="handleChange($event)" ngModel name="url" class="form-control"
+                            id="url" required>
                     </div>
                     <div class="form-group">
                         <label for="fotoProyeto" class="col-form-label">Imagen Proyecto</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="fotoProyeto" class="form-control"
-                            id="fotoProyeto" required>
+                        <input type="text" (keyup)="handleChange($event)" ngModel name="fotoProyecto"
+                            class="form-control" id="fotoProyeto" required>
                     </div>
                 </form>
             </div>
@@ -86,12 +87,12 @@
 </div>
 
 <!--Modal editar Proyecto-->
-<div class="modal fade" id="editarModalProyecto" tabindex="-1" role="dialog"
-    aria-labelledby="editarProyectoModalLabel" aria-hidden="true" data-bs-backdrop="static">
+<div class="modal fade" id="editarModalProyecto" tabindex="-1" role="dialog" aria-labelledby="editarProyectoModalLabel"
+    aria-hidden="true" data-bs-backdrop="static">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editarProyectoModalLabel">Editar Educación {{modificarProyecto?.idProy}}
+                <h5 class="modal-title" id="editarProyectoModalLabel">Editar Proyecto: {{modificarProyecto?.nombreProyecto}}
                 </h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -101,23 +102,24 @@
                 <form #editForm="ngForm">
                     <div class="form-group">
                         <label for="nombreProyecto" class="col-form-label">Nombre Proyecto</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarProyecto?.nombreProyecto}}"
-                            name="nombreProyecto" class="form-control" id="nombreProyecto" required>
+                        <input type="text" (keyup)="handleChange($event)"
+                            ngModel="{{modificarProyecto?.nombreProyecto}}" name="nombreProyecto" class="form-control"
+                            id="nombreProyecto" required>
                     </div>
                     <div class="form-group">
-                        <label for="descripcion" class="col-form-label">Descripcion</label>
+                        <label for="descripcion" class="col-form-label">Descripción</label>
                         <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarProyecto?.descripcion}}"
                             name="descripcion" class="form-control" id="descripcion" required>
                     </div>
                     <div class="form-group">
-                        <label for="urlProy" class="col-form-label">Url Proyecto</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarProyecto?.urlProy}}"
-                            name="urlProy" class="form-control" id="urlProy" required>
+                        <label for="url" class="col-form-label">Url Proyecto</label>
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarProyecto?.url}}"
+                            name="url" class="form-control" id="url" required>
                     </div>
                     <div class="form-group">
                         <label for="fotoProyeto" class="col-form-label">Imagen Proyecto</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="fotoProyeto" class="form-control"
-                            id="fotoProyeto" required>
+                        <input type="text" (keyup)="handleChange($event)" ngModel name="fotoProyecto"
+                            class="form-control" id="fotoProyeto" required>
                     </div>
                 </form>
             </div>
@@ -143,7 +145,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p class="text-dark">¿Estás seguro de eliminar esta Proyecto: {{borrarProyecto?.nombreProyecto}}?</p>
+                <p class="text-dark">¿Estás seguro de eliminar este proyecto?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
@@ -153,5 +155,3 @@
         </div>
     </div>
 </div>
-
-

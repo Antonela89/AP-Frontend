@@ -2,6 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Proyecto } from 'src/app/model/proyecto';
 import { ProyectoService } from 'src/app/service/proyecto.service';
+import { TokenService } from 'src/app/service/token.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-proyectos',
@@ -13,12 +15,18 @@ export class ProyectosComponent implements OnInit {
   public modificarProyecto: Proyecto | undefined;
   public borrarProyecto: Proyecto | undefined;
   public formToSend: any = {};
+  isLogged = environment.isLogged;
 
 
-  constructor(private proyectoService: ProyectoService) { }
+  constructor(private tokenService: TokenService, private proyectoService: ProyectoService) { }
 
   ngOnInit(): void {
     this.getProyectos();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
   public getProyectos(){

@@ -6,11 +6,11 @@
 }
 
 .row {
-    padding: 20px;
     margin: 0;
 }
 
 .row h1, .row div ul li h1, h3, p {
+    margin-top: 0;
     color: white;
 }
 

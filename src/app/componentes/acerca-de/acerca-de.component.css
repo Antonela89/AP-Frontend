@@ -2,29 +2,40 @@
     width: 100%;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
-.row{
+.container-fluid #botones{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.container-fluid #persona{
     display: flex;
     padding: 15px;
     margin: 0;
     align-items: center;
 }
 
-.row #fotoYtitulo{
+.container-fluid #persona #fotoYtitulo{
     display: flex;
 }
 
-.row #foto .img-fluid {
+.container-fluid #persona #foto .img-fluid {
     border-radius: 50%;
 }
 
-.row div #nombre, .row div p, .row div span h4 {
+.container-fluid #persona div #nombre, .container-fluid #persona div p, .container-fluid #persona div span h4 {
     text-align: center;
 }
 
 @media only screen and (max-width:768px) {
-    .row #fotoYtitulo{
+    .container-fluid #persona #fotoYtitulo{
         display: flex;
         flex-direction: column;
     }

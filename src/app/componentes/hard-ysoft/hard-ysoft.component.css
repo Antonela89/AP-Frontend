@@ -1,16 +1,9 @@
-.container-fluid {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
 .row{
     padding: 10px;
     margin: 0;
 }
 
-.row div{
+#contenedor_skills{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
 }

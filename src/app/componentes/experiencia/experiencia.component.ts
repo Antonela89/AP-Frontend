@@ -2,6 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
+import { TokenService } from 'src/app/service/token.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-experiencia',
@@ -13,11 +15,17 @@ export class ExperienciaComponent implements OnInit {
   public modificarExperiencia: Experiencia | undefined;
   public borrarExperiencia: Experiencia | undefined;
   public formToSend: any = {};
+  isLogged = environment.isLogged;
 
-  constructor(private experienciaService: ExperienciaService) { }
+  constructor(private tokenService: TokenService, private experienciaService: ExperienciaService) { }
 
   ngOnInit(): void {
     this.getExperiencias();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
   public getExperiencias() {

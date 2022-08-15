@@ -21,7 +21,7 @@ export class ExperienciaService {
   }
 
   public deleteExperiencia(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.ApiExperiencia}/borrar/${id}`);
+    return this.http.delete<void>(`${this.ApiExperiencia}borrar/${id}`);
   }
 
   public updateExperiencia(experiencia: Experiencia, id: number): Observable<Experiencia> {

@@ -4,7 +4,7 @@
         <!--Boton agregar experiencia-->
         <button type="button" class="btn btn-info text-light" data-bs-toggle="modal"
             data-bs-target="#agregarModalEducacion" data-bs-whatever="agregarModalEducacion"
-            (click)="openModal('agregar')">
+            (click)="openModal('agregar')" *ngIf="isLogged">
             Agregar Educación
         </button>
     </div>
@@ -30,11 +30,11 @@
             </div>
             <div class="col-text-center" id="botones">
                 <a (click)="openModal('editar', educacion)" class="btn btn-primary tooltips" data-bs-placement="top"
-                    data-bs-toggle="modal" data-original-title="Edit" data-bs-target="#editarModalEducacion">
+                    data-bs-toggle="modal" data-original-title="Edit" data-bs-target="#editarModalEducacion" *ngIf="isLogged">
                     <i class="fa fa-pencil"></i>
                 </a>
                 <a (click)="openModal('eliminar', educacion)" class="btn btn-danger delete" data-bs-placement="top"
-                    data-bs-toggle="modal" data-original-title="Delete" data-bs-target="#eliminarModalEducacion">
+                    data-bs-toggle="modal" data-original-title="Delete" data-bs-target="#eliminarModalEducacion" *ngIf="isLogged">
                     <i class="fa fa-times"></i>
                 </a>
             </div>
@@ -57,7 +57,7 @@
             <div class="modal-body">
                 <form #agregarForm="ngForm">
                     <div class="form-group">
-                        <label for="institucion" class="col-form-label">Institucion</label>
+                        <label for="institucion" class="col-form-label">Institución</label>
                         <input type="text" (keyup)="handleChange($event)" ngModel name="institucion"
                             class="form-control" id="institucion" required>
                     </div>
@@ -102,7 +102,7 @@
             <div class="modal-body">
                 <form #editForm="ngForm">
                     <div class="form-group">
-                        <label for="institucion" class="col-form-label">Institucion</label>
+                        <label for="institucion" class="col-form-label">Institución</label>
                         <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarEducacion?.institucion}}"
                             name="institucion" class="form-control" id="institucion" required>
                     </div>
@@ -145,7 +145,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p class="text-dark">¿Estás seguro de eliminar esta educación: {{borrarEducacion?.institucion}}?</p>
+                <p class="text-dark">¿Estás seguro de eliminar esta educación?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
