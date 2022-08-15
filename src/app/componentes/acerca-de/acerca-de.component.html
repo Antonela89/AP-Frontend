@@ -1,41 +1,40 @@
-<div class="container-fluid">
-    
-    <div class="col-text-center" id="botones">
-        <!--Boton agregar experiencia-->
-        <button type="button" class="btn btn-info text-light" data-bs-toggle="modal" id="agregar"
-        data-bs-target="#agregarModalPersona" data-bs-whatever="agregarModalPersona" (click)="openModal('agregar')" *ngIf="isLogged">
-        Agregar
-        </button>
-        <div class="col-text-center" id="edicion">
-            <a (click)="openModal('editar', persona)" class="btn btn-primary tooltips" data-bs-placement="top"
-                data-bs-toggle="modal" data-original-title="Edit" data-bs-target="#editarModalPersona" *ngIf="isLogged">
-                <i class="fa fa-pencil"></i>
-            </a>
-            <a (click)="openModal('eliminar', persona)" class="btn btn-danger delete" data-bs-placement="top"
-                data-bs-toggle="modal" data-original-title="Delete" data-bs-target="#eliminarModalPersona" *ngIf="isLogged">
-                <i class="fa fa-times"></i>
-            </a>
-        </div>
-    </div>
+<div class="container-fluid" id="presentacion">
 
-
-    <div class="row" *ngIf="persona" id="persona">
-        <div id="fotoYapellido" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6" id="foto">
+    <div class="row col-xs-12 col-sm-9 col-md-10 col-lg-10" *ngIf="persona" id="persona">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            <div class="col-xs-12 col-sm-6 col-md-12 col-lg-" id="foto">
                 <img src="{{persona.urlFoto}}" alt="" srcset="" class="img-fluid" />
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-12 col-lg-6" id="apellido">
+            <div class="col-xs-12 col-sm-6 col-md-12 col-lg-" id="apellido">
                 <h3 id="nombre">{{persona.nombre}} {{persona.apellido}}</h3>
                 <p>{{persona.titulo}}</p>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8" id="acerca">
             <span>
                 <h4>Acerca de mí</h4>
                 <p>
                     {{persona.acercaMi}}
                 </p>
             </span>
+        </div>
+    </div>
+
+    <div class="col-text-center col-xs-4 col-sm-3 col-md-2 col-lg-2" id="botones" *ngIf="isLogged">
+        <!--Boton agregar experiencia-->
+        <button type="button" class="btn btn-info text-light m-2" data-bs-toggle="modal" id="agregar"
+            data-bs-target="#agregarModalPersona" data-bs-whatever="agregarModalPersona" (click)="openModal('agregar')">
+            Agregar
+        </button>
+        <div class="col-text-center" id="edicion">
+            <a (click)="openModal('editar', persona)" class="btn btn-primary tooltips" data-bs-placement="top"
+                data-bs-toggle="modal" data-original-title="Edit" data-bs-target="#editarModalPersona">
+                <i class="fa fa-pencil"></i>
+            </a>
+            <a (click)="openModal('eliminar', persona)" class="btn btn-danger delete" data-bs-placement="top"
+                data-bs-toggle="modal" data-original-title="Delete" data-bs-target="#eliminarModalPersona">
+                <i class="fa fa-times"></i>
+            </a>
         </div>
     </div>
 </div>
@@ -125,8 +124,8 @@
                     </div>
                     <div class="form-group">
                         <label for="urlFoto" class="col-form-label">Foto</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarPersona?.urlFoto}}" name="urlFoto" class="form-control"
-                            id="urlFoto" required>
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarPersona?.urlFoto}}"
+                            name="urlFoto" class="form-control" id="urlFoto" required>
                     </div>
                 </form>
             </div>

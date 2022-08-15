@@ -13,8 +13,12 @@ export class PersonaService {
 
   constructor(private http: HttpClient){ }
 
-  public getPersona(): Observable<Persona> {
-    return this.http.get<Persona>(`${this.ApiPersona}ver/perfil`);
+  public getPersonas(): Observable<Persona[]>{
+    return this.http.get<Persona[]>(`${this.ApiPersona}ver`);
+  }
+
+  public getPersonaPerfil(id: number): Observable<Persona> {
+    return this.http.get<Persona>(`${this.ApiPersona}ver/perfil/${id}`);
   }
 
   public createPersona(persona: Persona): Observable<Persona> {
@@ -25,7 +29,7 @@ export class PersonaService {
     return this.http.delete<void>(`${this.ApiPersona}borrar/${id}`);
   }
 
-  public updatePersona(persona: Persona, id: number): Observable<Persona> {
+  public updatePersona(persona: FormData, id: number): Observable<Persona> {
     return this.http.put<Persona>(`${this.ApiPersona}editar/${id}`, persona);
   }
 }

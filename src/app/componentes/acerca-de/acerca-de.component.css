@@ -1,41 +1,47 @@
-.container-fluid{
-    width: 100%;
+#presentacion{
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row
 }
 
-.container-fluid #botones{
+#presentacion #botones{
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px;
 }
 
-.container-fluid #persona{
-    display: flex;
+#presentacion #persona{
     padding: 15px;
     margin: 0;
     align-items: center;
 }
 
-.container-fluid #persona #fotoYtitulo{
+#presentacion #persona #fotoYtitulo{
+    width: 50%;
     display: flex;
 }
 
-.container-fluid #persona #foto .img-fluid {
+#presentacion #persona #fotoYtitulo #foto, #presentacion #persona #fotoYtitulo #apellido{
+    width: 25%;
+}
+
+#presentacion #persona #acerca{
+    width: 50%;
+}
+
+#presentacion #persona #foto .img-fluid {
     border-radius: 50%;
 }
 
-.container-fluid #persona div #nombre, .container-fluid #persona div p, .container-fluid #persona div span h4 {
+#presentacion #persona div #nombre, #presentacion #persona div p, #presentacion #persona div span h4 {
     text-align: center;
 }
 
 @media only screen and (max-width:768px) {
-    .container-fluid #persona #fotoYtitulo{
+    #presentacion #persona #fotoYtitulo{
         display: flex;
         flex-direction: column;
     }

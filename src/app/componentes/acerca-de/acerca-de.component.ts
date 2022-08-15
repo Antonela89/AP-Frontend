@@ -13,16 +13,19 @@ import { environment } from 'src/environments/environment';
 })
 
 export class AcercaDeComponent implements OnInit {
-  public persona: Persona | undefined;
+  public persona: any;
+
   public modificarPersona: Persona | undefined;
   public borrarPersona: Persona | undefined;
   public formToSend: any = {};
   isLogged = environment.isLogged;
 
-  constructor(private tokenService: TokenService, private personaService: PersonaService) { }
+  constructor(private tokenService: TokenService, private personaService: PersonaService) {
+  }
 
   ngOnInit(): void {
-    this.getPersona();
+    this.getPersonas();
+
     if (this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
@@ -30,15 +33,14 @@ export class AcercaDeComponent implements OnInit {
     }
   }
 
-  public getPersona(): void {
-    this.personaService.getPersona().subscribe({
-      next: (response: Persona) => {
-        this.persona = response;
-      }, error: (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    })
+  getPersonas() {
+    this.personaService.getPersonas().subscribe(data => {
+      this.persona = data[data.length - 1];
+    }, err => {
+      alert(err);
+    })  
   }
+
   handleChange(e: Event): void {
     const inputValue = ((<HTMLInputElement>e.target).value);
     const inputName = ((<HTMLInputElement>e.target).name);
@@ -74,7 +76,7 @@ export class AcercaDeComponent implements OnInit {
       next: (response: Persona) => {
         console.log(response);
         alert("¡Enviado correctamente!");
-        this.getPersona();
+        this.getPersonas();
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
@@ -83,10 +85,18 @@ export class AcercaDeComponent implements OnInit {
   }
 
   public editarPersona(id: number) {
-    this.personaService.updatePersona(this.formToSend, id).subscribe({
+    const formData = new FormData;
+
+    formData.append('nombre', this.formToSend.nombre);
+    formData.append('apellido', this.formToSend.apellido);
+    formData.append('titulo', this.formToSend.titulo);
+    formData.append('acercaMi', this.formToSend.acercaMi);
+    formData.append('urlFoto', this.formToSend.urlFoto);
+
+    this.personaService.updatePersona(formData, id).subscribe({
       next: (response: Persona) => {
         console.log(response);
-        this.getPersona();
+        this.getPersonas();
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
@@ -97,7 +107,7 @@ export class AcercaDeComponent implements OnInit {
   public eliminarPersona(id: number): void {
     this.personaService.deletePersona(id).subscribe({
       next: (response: void) => {
-        console.log(response), this.getPersona();
+        console.log(response), this.getPersonas();
       }, error: (error: HttpErrorResponse) => {
         alert(error.message);
       }
