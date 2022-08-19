@@ -1,19 +1,85 @@
-.container-fluid {
+#experiencia {
     width: 100%;
     background-color: #0c0c2c;
     padding: 0;
     margin: 0;
 }
 
-.row {
-    margin: 0;
+#experiencia #encabezado{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
 }
 
-.row h1, .row div ul li h1, h3, p {
-    margin-top: 0;
+#experiencia #encabezado #titulo{
+    display: flex;
+    align-items: center;
+}
+
+#experiencia #encabezado #titulo h1{
+    margin: 0; 
+    padding: 10px;
+    text-transform: uppercase;
+    justify-content: center;
+}
+
+#experiencia #encabezado a {
+    position: absolute;
+    height: 50px;
+    padding: 10px;
+    right: 20px;
+}
+
+#experiencia #encabezado a svg {
+    width: 25px;
+}
+
+/*Notificacion base de datos vacia*/
+#experiencia .notificacion{
+    width: 100%;
+    margin: 20px;
+}
+
+#experiencia .notificacion .alert{
+    width: 100%;
+}
+
+#experiencia .notificacion .alert h4{
+    text-transform: uppercase;
+}
+
+/*Renderizado de lista*/
+#experiencia #listado {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+#experiencia #listado #texto {
+    width: 90%;
+    margin: 20px;
     color: white;
 }
 
-.row div ul {
-    list-style:none;
+#experiencia #listado #botones {
+    padding: 0;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+#experiencia #listado #botones a {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+#experiencia #listado #botones a svg{
+    width: 25px;
+    height: 25px;
+}
+
+/*Responsivo*/

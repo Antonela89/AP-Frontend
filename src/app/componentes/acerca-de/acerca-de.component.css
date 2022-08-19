@@ -1,44 +1,81 @@
+/* *{
+    border: solid 2px red;
+} */
+
 #presentacion{
+    width: 100%;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: row
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
 }
 
 #presentacion #botones{
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    padding: 0;
+    position: absolute;
+    right: 20px;
     justify-content: center;
-    align-items: center;
+    top: 55px
+}
+
+#presentacion #botones a{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+#presentacion #botones a svg{
+    width: 25px;
 }
 
 #presentacion #persona{
-    padding: 15px;
-    margin: 0;
-    align-items: center;
-}
-
-#presentacion #persona #fotoYtitulo{
-    width: 50%;
+    width: 90%;
+    margin: 20px;
     display: flex;
 }
 
-#presentacion #persona #fotoYtitulo #foto, #presentacion #persona #fotoYtitulo #apellido{
-    width: 25%;
+#presentacion #persona #contenedor1{
+    width: 40%;
 }
 
-#presentacion #persona #acerca{
-    width: 50%;
-}
-
-#presentacion #persona #foto .img-fluid {
+#presentacion #persona #contenedor1 #foto .img-fluid {
     border-radius: 50%;
 }
 
-#presentacion #persona div #nombre, #presentacion #persona div p, #presentacion #persona div span h4 {
+#presentacion #persona #contenedor1 #datos {
+    width: 100%;
+}
+
+#presentacion #persona #contenedor1 #datos #nombre, #presentacion #persona #contenedor1 #datos #titulo {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+#presentacion #persona #contenedor2 {
+    width: 60%;
+}
+
+#presentacion #persona #contenedor2 #encabezado{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#presentacion #persona #contenedor2 #encabezado h1 {
+    text-transform: uppercase;
+}
+
+#presentacion #persona #contenedor2 #parrafo p {
+    width: 100%;
     text-align: center;
 }
+
+
 
 @media only screen and (max-width:768px) {
     #presentacion #persona #fotoYtitulo{
