@@ -23,8 +23,7 @@ export class LogoComponent implements OnInit {
     }
   }
 
-  onLogOut(e: Event): void {
-    e.defaultPrevented;
+  onLogOut(): void {
     this.tokenService.logOut();
     window.location.reload();
   }

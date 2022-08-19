@@ -5,81 +5,20 @@
     margin: 0;
 }
 
-#educacion #encabezado{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
-}
-
-#educacion #encabezado #titulo{
-    display: flex;
-    align-items: center;
-}
-
-#educacion #encabezado #titulo h1{
-    margin: 0; 
-    padding: 10px;
-    text-transform: uppercase;
-    justify-content: center;
-}
-
-#educacion #encabezado a {
-    position: absolute;
-    height: 50px;
-    padding: 10px;
-    right: 20px;
-}
-
-#educacion #encabezado a svg {
-    width: 25px;
-}
-
-/*Notificacion base de datos vacia*/
-#educacion .notificacion{
-    width: 100%;
-    margin: 20px;
-}
-
-#educacion .notificacion .alert{
-    width: 100%;
-}
-
-#educacion .notificacion .alert h4{
-    text-transform: uppercase;
-}
-
-/*Renderizado de lista*/
-#educacion #listado {
+#titulo{
     display: flex;
     justify-content: space-between;
-    position: relative;
 }
 
-#educacion #listado #texto {
-    width: 90%;
-    margin: 20px;
+.row {
+    padding: 20px;
+    margin: 0;
+}
+
+h1, .row div ul li h1, p {
     color: white;
 }
 
-#educacion #listado #botones {
-    padding: 0;
-    margin-right: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.row div ul {
+    list-style:none;
 }
-
-#educacion #listado #botones a {
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-    margin-top: 5px;
-}
-
-#educacion #listado #botones a svg{
-    width: 25px;
-    height: 25px;
-}
-
-/*Responsivo*/
