@@ -10,41 +10,23 @@
                 Por favor, ingresar usuario y clave
               </p>
 
-              <form #form="ngForm" (ngSubmit)="onLogin($event)" novalidate>
+              <form id="form" #form="ngForm" (ngSubmit)="onLogin($event)" novalidate>
                 <div class="form-outline form-white mb-4">
-                  <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control form-control-lg"
-                    [(ngModel)]="nombreUsuario" required ngClass="{
-                      'is-invalid': Usuario?.errors && Usuario?.touched,
-                      'is-valid': !Usuario?.errors && Usuario?.touched
-                    }" />
+                  
                   <label class="form-label" for="nombreUsuario">Usuario</label>
+                  <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control is-valid form-control-lg"
+                    [(ngModel)]="nombreUsuario" required>
+                  <!-- <div *ngIf= "Usuario" class="valid-feedback">El Usuario es requerido</div> -->
                 </div>
-                <!--<div *ngIf="Usuario?.errors && Usuario?.touched">
-                  <p *ngIf="Usuario?.hasError('required')" class="text-danger">
-                    El Usuario es requerido
-                  </p>
-                </div>-->
 
                 <div class="form-outline form-white mb-4">
-                  <input type="password" name="password" id="password" class="form-control form-control-lg"
-                    [(ngModel)]="password" required ngClass="{
-                      'is-invalid': Password?.errors && Password?.touched,
-                      'is-valid': !Password?.errors && Password?.touched
-                    }" />
                   <label class="form-label" for="password">Password</label>
-                </div>
-                <!--<div *ngIf="password?.errors && Password?.touched">
-                  <p *ngIf="Password?.hasError('required')" class="text-danger">
-                    El Password es requerido
-                  </p>
-                  <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
-                    El Password debe tener 8 o más caracteres
-                  </p>
-                </div>-->
-
-                <!-- <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p> -->
-                <button class="btn btn-outline-light btn-lg px-5" type="submit">
-                  Login
+                  <input type="password" name="password" id="password" class="form-control is-invalid form-control-lg"
+                    [(ngModel)]="password" required>
+                  <!-- <div *ngIf= "Password" class="valid-feedback">El password es requerido</div> -->
+                </div>  
+                <button id="boton" class="btn btn-outline-light btn-lg px-5" type="submit">
+                  Ingresar
                 </button>
               </form>
             </div>

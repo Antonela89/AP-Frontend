@@ -1,15 +1,100 @@
-.container-fluid {
+*{
+    border: solid 2px red;
+}
+
+#proyectos {
     width: 100%;
     padding: 0;
     margin: 0;
-    margin-bottom: 20px;
 }
 
-.container-fluid h1{
-    padding: 0px 12px;
-    margin: 0px 0px 21.44px 0px;
+#proyectos #encabezado{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
 }
 
-.row{
-    margin: 0;
+#proyectos #encabezado #titulo{
+    display: flex;
+    align-items: center;
 }
+
+#proyectos #encabezado #titulo h1{
+    margin: 0; 
+    padding: 10px;
+    text-transform: uppercase;
+    justify-content: center;
+}
+
+#proyectos #encabezado a {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    right: 20px;
+}
+
+#proyectos #encabezado a svg {
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+
+/*Notificacion base de datos vacia*/
+#proyectos .notificacion{
+    width: 100%;
+    margin: 20px;
+}
+
+#proyectos .notificacion .alert{
+    width: 100%;
+}
+
+#proyectos .notificacion .alert h4{
+    text-transform: uppercase;
+}
+
+/*Renderizado de lista*/
+
+#proyectos #listado{
+    width: 100%;
+    display: flex;
+}
+
+#proyectos #listado #cards{
+    width: 90%;
+}
+
+#proyectos #listado #cards #descripcion {
+    width: 60%;
+}
+
+#proyectos #listado #cards #imagen_proyecto{
+    width: 30%;
+}
+
+#proyectos #listado #botones {
+    width: 100%;
+    padding: 0;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#proyectos #listado #botones a {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+#proyectos #listado #botones a svg{
+    width: 25px;
+    height: 25px;
+}
+
+/*Responsivo*/
+

@@ -1,9 +1,102 @@
-.row{
-    padding: 10px;
+#skills {
+    width: 100%;
+    padding: 0;
     margin: 0;
 }
 
-#contenedor_skills{
+#skills #encabezado{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+#skills #encabezado #titulo{
+    display: flex;
+    align-items: center;
+}
+
+#skills #encabezado #titulo h1{
+    margin: 0; 
+    padding: 10px;
+    text-transform: uppercase;
+    justify-content: center;
+}
+
+#skills #encabezado a {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    right: 20px;
+}
+
+#skills #encabezado a svg {
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+
+/*Notificacion base de datos vacia*/
+#skills .notificacion{
+    width: 100%;
+    margin: 20px;
+}
+
+#skills .notificacion .alert{
+    width: 100%;
+}
+
+#skills .notificacion .alert h4{
+    text-transform: uppercase;
+}
+
+/*Renderizado de lista*/
+#skills #contenedor_skills {
+    width: 100%;
+}
+
+#skills #contenedor_skills #listado{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
+
+
+#skills #contenedor_skills #listado #cards {
+    width: 25%;
+}
+
+#skills #contenedor_skills #listado #cards #circulo {
+    width: 100%;
+}
+
+#skills #contenedor_skills #listado #cards #circulo #progreso{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#skills #contenedor_skills #listado #cards #botones {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+#skills #contenedor_skills #listado #cards #botones a {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    margin-left: 5px;
+}
+
+#skills #contenedor_skills #listado #cards #botones a svg{
+    width: 25px;
+    height: 25px;
+}
+
+/*Responsivo*/
+

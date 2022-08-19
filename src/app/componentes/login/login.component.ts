@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/model/login-usuario';
 import { AuthService } from 'src/app/service/auth.service';
@@ -19,16 +20,14 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   errMsj!: string;
 
+  Usuario = document.getElementById('nombreUsuario');
+  Password = document.getElementById('password');
+
+
+
+
   constructor(private tokenService: TokenService, private authService: AuthService, private router: Router){
   }
-
-  /*get Usuario() {
-    return this.form.get('nombreUsuario');
-  }
-
-  get Password() {
-    return this.form.get('password');
-  }*/
 
   ngOnInit(): void {
     if(this.tokenService.getToken()) {
@@ -37,7 +36,7 @@ export class LoginComponent implements OnInit {
       this.roles = this.tokenService.getAuthorities();
     }
   }
-  
+
   onLogin(event: Event): void {
     event.preventDefault;
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password); 
