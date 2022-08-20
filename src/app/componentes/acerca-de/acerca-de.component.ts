@@ -41,6 +41,10 @@ export class AcercaDeComponent implements OnInit {
     })  
   }
 
+  personaVacio(persona: {}) {
+    return (persona && (Object.keys(persona).length === 0));
+  }
+
   handleChange(e: Event): void {
     const inputValue = ((<HTMLInputElement>e.target).value);
     const inputName = ((<HTMLInputElement>e.target).name);

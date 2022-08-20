@@ -51,7 +51,7 @@ export class EducacionComponent implements OnInit {
     console.log(this.formToSend)
   }
 
-  openModal(mode:String, educacion?: Educacion, ): void{
+  openModal(mode:String, educacion?: Educacion ): void{
     const container = document.getElementById('main-container');
     const button=document.createElement('button');
     button.style.display ='none';

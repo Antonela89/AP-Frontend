@@ -1,38 +1,41 @@
-/* *{
-    border: solid 2px red;
-} */
-
 #presentacion{
     width: 100%;
     padding: 0;
     margin: 0;
+    position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    position: relative;
+    justify-content: flex-end;
 }
 
+/*Renderizado de botones*/
 #presentacion #botones{
-    padding: 0;
-    position: absolute;
+    position: relative;
     right: 20px;
+    padding: 0;
     justify-content: center;
-    top: 55px
 }
 
 #presentacion #botones a{
-    width: 50px;
-    height: 50px;
+    position: relative;
     display: flex;
-    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    padding: 5px;
     margin-top: 5px;
 }
 
 #presentacion #botones a svg{
-    width: 25px;
+    position: relative;
+    width: 20px;
+    height: 20px;
 }
 
+/*Renderizado de persona*/
 #presentacion #persona{
+    position: relative;
     width: 90%;
     margin: 20px;
     display: flex;
@@ -70,13 +73,30 @@
     text-transform: uppercase;
 }
 
+#presentacion #persona #contenedor2 #encabezado h1:hover {
+color:  #ae3452
+}
+
 #presentacion #persona #contenedor2 #parrafo p {
     width: 100%;
     text-align: center;
 }
 
+/*Notificacion base de datos vacia*/
+#presentacion .notificacion{
+    width: 80%;
+    margin: 20px;
+}
 
+#presentacion .notificacion .alert{
+    width: 100%;
+}
 
+#presentacion .notificacion .alert h4{
+    text-transform: uppercase;
+}
+
+/*Responsivo*/
 @media only screen and (max-width:768px) {
     #presentacion #persona #fotoYtitulo{
         display: flex;

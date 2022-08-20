@@ -18,21 +18,30 @@
 }
 
 #educacion #encabezado #titulo h1{
-    margin: 0; 
     padding: 10px;
     text-transform: uppercase;
     justify-content: center;
 }
 
+#educacion #encabezado #titulo h1:hover{
+    color: #ae3452;
+}
+
 #educacion #encabezado a {
     position: absolute;
-    height: 50px;
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    padding: 5px;
     right: 20px;
 }
 
 #educacion #encabezado a svg {
-    width: 25px;
+    position: relative;
+    width: 20px;
+    height: 20px;
 }
 
 /*Notificacion base de datos vacia*/
@@ -71,15 +80,20 @@
 }
 
 #educacion #listado #botones a {
-    width: 50px;
-    height: 50px;
-    padding: 10px;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
     margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #educacion #listado #botones a svg{
-    width: 25px;
-    height: 25px;
+    position: relative;
+    width: 20px;
+    height: 20px;
 }
 
 /*Responsivo*/
