@@ -113,5 +113,22 @@
     height: 20px;
 }
 
+/*Modals*/
+.modal-content{
+    border: solid 2px #0c0c2c;
+}
+
+.modal-content .modal-header{
+    border-bottom: solid 2px #ae3452;
+}
+
+.modal-content .modal-body input {
+    border: solid 1px #38bbc3;
+}
+
+.modal-content .modal-footer {
+    border-top: solid 2px #ae3452;
+}
+
 /*Responsivo*/
 

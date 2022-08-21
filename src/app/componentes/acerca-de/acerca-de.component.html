@@ -102,8 +102,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" (click)="handleAdd()" class="btn btn-success"
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" (click)="handleAdd()" class="btn btn-primary"
                     [disabled]="agregarForm.invalid">Agregar</button>
             </div>
         </div>
@@ -151,8 +151,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="agregarForm.invalid"
                     (click)="editarPersona(modificarPersona!.id)">Guardar Cambios</button>
             </div>
         </div>
@@ -175,7 +175,7 @@
                 <p class="text-dark">¿Estás seguro de eliminar: {{borrarPersona?.nombre}}?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
                 <button type="submit" (click)="eliminarPersona(borrarPersona!.id)" class="btn btn-danger">Si</button>
             </div>
         </div>
