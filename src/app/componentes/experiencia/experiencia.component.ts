@@ -72,9 +72,9 @@ export class ExperienciaComponent implements OnInit {
     this.experienciaService.createExperiencia(this.formToSend).subscribe({
       next:(response: Experiencia)=>{
           console.log(response);
-          alert("¡Enviado correctamente!");
           this.getExperiencias();
           this.router.navigate(['']);
+          alert("¡Enviado correctamente!");
         },
       error: (error: HttpErrorResponse)=>{
         alert(error.message); 
@@ -88,6 +88,7 @@ export class ExperienciaComponent implements OnInit {
         console.log(response); 
         this.getExperiencias();
         this.router.navigate(['']);
+        alert("¡Modificado correctamente!");
       },
       error: (error: HttpErrorResponse)=>{
         alert(error.message);
@@ -101,6 +102,7 @@ export class ExperienciaComponent implements OnInit {
       {console.log(response), 
         this.getExperiencias();
         this.router.navigate(['']);
+        alert("¡Eliminado correctamente!");
     },error: (error: HttpErrorResponse)=>
     {alert(error.message);
       this.router.navigate(['']);

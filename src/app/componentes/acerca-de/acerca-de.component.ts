@@ -80,9 +80,9 @@ export class AcercaDeComponent implements OnInit {
     this.personaService.createPersona(this.formToSend).subscribe({
       next: (response: Persona) => {
         console.log(response);
-        alert("¡Enviado correctamente!");
         this.getPersonas();
         this.router.navigate(['']);
+        alert("¡Enviado correctamente!");
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
@@ -105,6 +105,7 @@ export class AcercaDeComponent implements OnInit {
         console.log(response);
         this.getPersonas();
         this.router.navigate(['']);
+        alert("¡Modificado correctamente!");
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
@@ -119,6 +120,7 @@ export class AcercaDeComponent implements OnInit {
         console.log(response), 
         this.getPersonas();
         this.router.navigate(['']);
+        alert("¡Eliminado correctamente!");
       }, error: (error: HttpErrorResponse) => {
         alert(error.message);
         this.router.navigate(['']);

@@ -74,9 +74,9 @@ export class EducacionComponent implements OnInit {
     this.educacionService.createEducacion(this.formToSend).subscribe({
       next:(response: Educacion)=>{
           console.log(response);
-          alert("¡Enviado correctamente!");
           this.getEducaciones();
           this.router.navigate(['']);
+          alert("¡Enviado correctamente!");
         },
       error: (error: HttpErrorResponse)=>{
         alert(error.message); 
@@ -88,9 +88,9 @@ export class EducacionComponent implements OnInit {
     this.educacionService.updateEducacion(this.formToSend, id).subscribe({
       next:(response: Educacion) => {
         console.log(response); 
-        alert("Modificado correctamente")
         this.getEducaciones();
         this.router.navigate(['']);
+        alert("Modificado correctamente")
       },
       error: (error: HttpErrorResponse)=>{
         alert(error.message);
@@ -104,6 +104,7 @@ export class EducacionComponent implements OnInit {
         console.log(response), 
         this.getEducaciones();
         this.router.navigate(['']);
+        alert("¡Eliminado correctamente!");
     },error: (error: HttpErrorResponse)=>{
       alert(error.message); 
       this.router.navigate(['']);
