@@ -70,9 +70,9 @@ export class HardYSoftComponent implements OnInit {
     this.skillsService.createSkills(this.formToSend).subscribe({
       next:(response: Skills)=>{
           console.log(response);
-          alert("¡Enviado correctamente!");
           this.getSkills();
           this.router.navigate(['']);
+          alert("¡Enviado correctamente!");
         },
       error: (error: HttpErrorResponse)=>{
         alert(error.message); 
@@ -86,6 +86,7 @@ export class HardYSoftComponent implements OnInit {
         console.log(response); 
         this.getSkills();
         this.router.navigate(['']);
+        alert("¡Modificado correctamente!");
       },
       error: (error: HttpErrorResponse)=>{
         alert(error.message);
@@ -99,6 +100,7 @@ export class HardYSoftComponent implements OnInit {
       {console.log(response), 
         this.getSkills();
         this.router.navigate(['']);
+        alert("¡Eliminado correctamente!");
     },error: (error: HttpErrorResponse)=>
     {alert(error.message);
       this.router.navigate(['']);

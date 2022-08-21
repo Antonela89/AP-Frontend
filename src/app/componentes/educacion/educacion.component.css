@@ -4,6 +4,9 @@
     padding: 0;
     margin: 0;
     color: white;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #educacion #encabezado{
@@ -47,12 +50,12 @@
 
 /*Notificacion base de datos vacia*/
 #educacion .notificacion{
-    width: 100%;
-    margin: 20px;
+    width: 80%;
 }
 
 #educacion .notificacion .alert{
     width: 100%;
+    margin: 0;
 }
 
 #educacion .notificacion .alert h4{

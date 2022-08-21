@@ -71,9 +71,9 @@ export class ProyectosComponent implements OnInit {
     this.proyectoService.createProyecto(this.formToSend).subscribe({
       next:(response: Proyecto)=>{
           console.log(response);
-          alert("¡Enviado correctamente!");
           this.getProyectos();
           this.router.navigate(['']);
+          alert("¡Enviado correctamente!");
         },
       error: (error: HttpErrorResponse)=>{
         alert(error.message); 
@@ -87,6 +87,7 @@ export class ProyectosComponent implements OnInit {
         console.log(response); 
         this.getProyectos();
         this.router.navigate(['']);
+        alert("¡Modificado correctamente!");
       },
       error: (error: HttpErrorResponse)=>{
         alert(error.message);
@@ -99,6 +100,8 @@ export class ProyectosComponent implements OnInit {
       next:(response: void) => {
         console.log(response);
          this.getProyectos();
+         this.router.navigate(['']);
+         alert("¡Eliminado correctamente!");
     },error: (error: HttpErrorResponse)=>{
       alert(error.message);
       this.router.navigate(['']);

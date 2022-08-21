@@ -5,6 +5,9 @@
     padding: 0;
     margin: 0;
     border-top: solid 3px white;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #experiencia #encabezado{

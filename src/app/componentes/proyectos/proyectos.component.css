@@ -46,12 +46,13 @@
 
 /*Notificacion base de datos vacia*/
 #proyectos .notificacion{
-    width: 100%;
-    margin: 20px;
+    width: 80%;
+
 }
 
 #proyectos .notificacion .alert{
     width: 100%;
+    margin: 0;
 }
 
 #proyectos .notificacion .alert h4{

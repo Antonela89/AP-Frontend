@@ -2,7 +2,11 @@
     width: 100%;
     padding: 0;
     margin: 0;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
 }
+
 
 #skills #encabezado{
     display: flex;
@@ -45,12 +49,12 @@
 
 /*Notificacion base de datos vacia*/
 #skills .notificacion{
-    width: 100%;
-    margin: 20px;
+    width: 80%;
 }
 
 #skills .notificacion .alert{
     width: 100%;
+    margin: 0px;
 }
 
 #skills .notificacion .alert h4{
@@ -60,6 +64,7 @@
 /*Renderizado de lista*/
 #skills #contenedor_skills {
     width: 100%;
+    margin-bottom: 25px;
 }
 
 #skills #contenedor_skills #listado{
