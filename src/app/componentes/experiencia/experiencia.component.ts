@@ -4,6 +4,7 @@ import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
 import { TokenService } from 'src/app/service/token.service';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-experiencia',
@@ -17,7 +18,7 @@ export class ExperienciaComponent implements OnInit {
   public formToSend: any = {};
   isLogged = environment.isLogged;
 
-  constructor(private tokenService: TokenService, private experienciaService: ExperienciaService) { }
+  constructor(private tokenService: TokenService, private experienciaService: ExperienciaService, private router: Router) { }
 
   ngOnInit(): void {
     this.getExperiencias();
@@ -73,9 +74,11 @@ export class ExperienciaComponent implements OnInit {
           console.log(response);
           alert("¡Enviado correctamente!");
           this.getExperiencias();
+          this.router.navigate(['']);
         },
       error: (error: HttpErrorResponse)=>{
         alert(error.message); 
+        this.router.navigate(['']);
       }}) 
   }
 
@@ -84,9 +87,11 @@ export class ExperienciaComponent implements OnInit {
       next:(response: Experiencia) => {
         console.log(response); 
         this.getExperiencias();
+        this.router.navigate(['']);
       },
       error: (error: HttpErrorResponse)=>{
         alert(error.message);
+        this.router.navigate(['']);
       }})
   }
 
@@ -95,8 +100,10 @@ export class ExperienciaComponent implements OnInit {
       next:(response: void) => 
       {console.log(response), 
         this.getExperiencias();
+        this.router.navigate(['']);
     },error: (error: HttpErrorResponse)=>
     {alert(error.message);
+      this.router.navigate(['']);
   }}) 
   }
 }

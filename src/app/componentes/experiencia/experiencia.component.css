@@ -1,8 +1,10 @@
 #experiencia {
     width: 100%;
     background-color: #0c0c2c;
+    color: white;
     padding: 0;
     margin: 0;
+    border-top: solid 3px white;
 }
 
 #experiencia #encabezado{

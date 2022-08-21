@@ -82,9 +82,11 @@ export class AcercaDeComponent implements OnInit {
         console.log(response);
         alert("¡Enviado correctamente!");
         this.getPersonas();
+        this.router.navigate(['']);
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
+        this.router.navigate(['']);
       }
     })
   }
@@ -114,9 +116,12 @@ export class AcercaDeComponent implements OnInit {
   public eliminarPersona(id: number): void {
     this.personaService.deletePersona(id).subscribe({
       next: (response: void) => {
-        console.log(response), this.getPersonas();
+        console.log(response), 
+        this.getPersonas();
+        this.router.navigate(['']);
       }, error: (error: HttpErrorResponse) => {
         alert(error.message);
+        this.router.navigate(['']);
       }
     })
   }

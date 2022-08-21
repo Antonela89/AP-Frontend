@@ -4,6 +4,7 @@ import { Proyecto } from 'src/app/model/proyecto';
 import { ProyectoService } from 'src/app/service/proyecto.service';
 import { TokenService } from 'src/app/service/token.service';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-proyectos',
@@ -18,7 +19,7 @@ export class ProyectosComponent implements OnInit {
   isLogged = environment.isLogged;
 
 
-  constructor(private tokenService: TokenService, private proyectoService: ProyectoService) { }
+  constructor(private tokenService: TokenService, private proyectoService: ProyectoService, private router: Router) { }
 
   ngOnInit(): void {
     this.getProyectos();
@@ -72,9 +73,11 @@ export class ProyectosComponent implements OnInit {
           console.log(response);
           alert("¡Enviado correctamente!");
           this.getProyectos();
+          this.router.navigate(['']);
         },
       error: (error: HttpErrorResponse)=>{
         alert(error.message); 
+        this.router.navigate(['']);
       }}) 
   }
 
@@ -83,16 +86,22 @@ export class ProyectosComponent implements OnInit {
       next:(response: Proyecto) => {
         console.log(response); 
         this.getProyectos();
+        this.router.navigate(['']);
       },
       error: (error: HttpErrorResponse)=>{
         alert(error.message);
+        this.router.navigate(['']);
       }})
   }
 
   public eliminarProyecto(id: number):void{
     this.proyectoService.deleteProyecto(id).subscribe({
-      next:(response: void) => {console.log(response), this.getProyectos();
-    },error: (error: HttpErrorResponse)=>{alert(error.message);
+      next:(response: void) => {
+        console.log(response);
+         this.getProyectos();
+    },error: (error: HttpErrorResponse)=>{
+      alert(error.message);
+      this.router.navigate(['']);
   }}) 
   }
 }

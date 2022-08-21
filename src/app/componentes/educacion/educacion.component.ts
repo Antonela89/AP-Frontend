@@ -5,6 +5,7 @@ import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
 import { TokenService } from 'src/app/service/token.service';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-educacion',
@@ -19,7 +20,7 @@ export class EducacionComponent implements OnInit {
   public formToSend: any = {};
   isLogged = environment.isLogged;
 
-  constructor(private tokenService: TokenService, private educacionService: EducacionService) { }
+  constructor(private tokenService: TokenService, private educacionService: EducacionService, private router: Router) { }
 
   ngOnInit(): void {
     this.getEducaciones();
@@ -75,9 +76,11 @@ export class EducacionComponent implements OnInit {
           console.log(response);
           alert("¡Enviado correctamente!");
           this.getEducaciones();
+          this.router.navigate(['']);
         },
       error: (error: HttpErrorResponse)=>{
         alert(error.message); 
+        this.router.navigate(['']);
       }}) 
   }
 
@@ -85,17 +88,25 @@ export class EducacionComponent implements OnInit {
     this.educacionService.updateEducacion(this.formToSend, id).subscribe({
       next:(response: Educacion) => {
         console.log(response); 
+        alert("Modificado correctamente")
         this.getEducaciones();
+        this.router.navigate(['']);
       },
       error: (error: HttpErrorResponse)=>{
         alert(error.message);
+        this.router.navigate(['']);
       }})
   }
 
   public eliminarEducacion(id: number):void{
     this.educacionService.deleteEducacion(id).subscribe({
-      next:(response: void) => {console.log(response), this.getEducaciones();
-    },error: (error: HttpErrorResponse)=>{alert(error.message);
+      next:(response: void) => {
+        console.log(response), 
+        this.getEducaciones();
+        this.router.navigate(['']);
+    },error: (error: HttpErrorResponse)=>{
+      alert(error.message); 
+      this.router.navigate(['']);
   }}) 
   }
 }

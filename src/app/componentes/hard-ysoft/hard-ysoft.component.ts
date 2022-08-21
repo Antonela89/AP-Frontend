@@ -4,6 +4,7 @@ import { Skills } from 'src/app/model/skills';
 import { SkillsService } from 'src/app/service/skills.service';
 import { TokenService } from 'src/app/service/token.service';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hard-ysoft',
@@ -17,7 +18,7 @@ export class HardYSoftComponent implements OnInit {
   public formToSend: any = {};
   isLogged = environment.isLogged;
 
-  constructor(private tokenService: TokenService, private skillsService: SkillsService) { }
+  constructor(private tokenService: TokenService, private skillsService: SkillsService, private router: Router) { }
 
   ngOnInit(): void {
     this.getSkills();
@@ -71,9 +72,11 @@ export class HardYSoftComponent implements OnInit {
           console.log(response);
           alert("¡Enviado correctamente!");
           this.getSkills();
+          this.router.navigate(['']);
         },
       error: (error: HttpErrorResponse)=>{
         alert(error.message); 
+        this.router.navigate(['']);
       }}) 
   }
 
@@ -82,9 +85,11 @@ export class HardYSoftComponent implements OnInit {
       next:(response: Skills) => {
         console.log(response); 
         this.getSkills();
+        this.router.navigate(['']);
       },
       error: (error: HttpErrorResponse)=>{
         alert(error.message);
+        this.router.navigate(['']);
       }})
   }
 
@@ -93,8 +98,10 @@ export class HardYSoftComponent implements OnInit {
       next:(response: void) => 
       {console.log(response), 
         this.getSkills();
+        this.router.navigate(['']);
     },error: (error: HttpErrorResponse)=>
     {alert(error.message);
+      this.router.navigate(['']);
   }}) 
   }
 }
