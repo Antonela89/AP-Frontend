@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona';
 import { PersonaService } from 'src/app/service/persona.service';
 import { TokenService } from 'src/app/service/token.service';
@@ -13,14 +14,13 @@ import { environment } from 'src/environments/environment';
 })
 
 export class AcercaDeComponent implements OnInit {
-  public persona: any;
-
+  public persona: Persona | undefined;
   public modificarPersona: Persona | undefined;
   public borrarPersona: Persona | undefined;
   public formToSend: any = {};
   isLogged = environment.isLogged;
 
-  constructor(private tokenService: TokenService, private personaService: PersonaService) {
+  constructor(private tokenService: TokenService, private personaService: PersonaService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -41,9 +41,10 @@ export class AcercaDeComponent implements OnInit {
     })  
   }
 
-  personaVacio(persona: {}) {
-    return (persona && (Object.keys(persona).length === 0));
+  personaVacio(persona  = {}) {
+    return Object.keys(persona).length === 0;
   }
+  
 
   handleChange(e: Event): void {
     const inputValue = ((<HTMLInputElement>e.target).value);
@@ -101,9 +102,11 @@ export class AcercaDeComponent implements OnInit {
       next: (response: Persona) => {
         console.log(response);
         this.getPersonas();
+        this.router.navigate(['']);
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
+        this.router.navigate(['']);
       }
     })
   }

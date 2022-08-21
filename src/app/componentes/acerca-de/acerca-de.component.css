@@ -11,9 +11,14 @@
 /*Renderizado de botones*/
 #presentacion #botones{
     position: relative;
+    width: 40px;
     right: 20px;
     padding: 0;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    justify-items: center;
+    align-items: center;
 }
 
 #presentacion #botones a{
