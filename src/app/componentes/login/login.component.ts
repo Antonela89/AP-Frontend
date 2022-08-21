@@ -20,12 +20,6 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   errMsj!: string;
 
-  Usuario = document.getElementById('nombreUsuario');
-  Password = document.getElementById('password');
-
-
-
-
   constructor(private tokenService: TokenService, private authService: AuthService, private router: Router){
   }
 
@@ -37,8 +31,33 @@ export class LoginComponent implements OnInit {
     }
   }
 
+
+  // Array.from(forms).forEach(form => {
+  //   form.addEventListener('submit', event => {
+  //     if (!form.checkValidity()) {
+  //       event.preventDefault()
+  //       event.stopPropagation()
+  //     }
+
+  //     form.classList.add('was-validated')
+  //   }, false)
+  // });
+
   onLogin(event: Event): void {
-    event.preventDefault;
+
+    // const forms = document.querySelectorAll('.needs-validation');
+
+    // Array.from(forms).forEach(form => {
+    //     form.addEventListener('submit', event => {
+    //       if (!form.checkValidity()) {
+    //         event.preventDefault()
+    //         event.stopPropagation()
+    //       }
+    
+    //       form.classList.add('was-validated')
+    //     }, false)
+    //   });
+      
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password); 
       this.authService.login(this.loginUsuario).subscribe({next: data => {
         this.isLogged = true;

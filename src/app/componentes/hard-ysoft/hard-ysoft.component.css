@@ -64,7 +64,6 @@
 /*Renderizado de lista*/
 #skills #contenedor_skills {
     width: 100%;
-    margin-bottom: 25px;
 }
 
 #skills #contenedor_skills #listado{
@@ -76,23 +75,26 @@
 
 #skills #contenedor_skills #listado #cards {
     width: 25%;
+    display: flex;
 }
 
 #skills #contenedor_skills #listado #cards #circulo {
     width: 100%;
-}
 
+}
 #skills #contenedor_skills #listado #cards #circulo #progreso{
     width: 100%;
     display:flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 #skills #contenedor_skills #listado #cards #botones {
     width: 100%;
     padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
 }
@@ -102,7 +104,7 @@
     width: 40px;
     height: 40px;
     padding: 5px;
-    margin-left: 5px;
+    margin-top: 5px;
     display: flex;
     justify-content: center;
     align-items: center
