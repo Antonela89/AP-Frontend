@@ -10,7 +10,7 @@
                 Por favor, ingresar usuario y clave
               </p>
 
-              <form id="form" #form="ngForm" (ngSubmit)="onLogin($event)" class="needs-validation" novalidate>
+              <form  class="needs-validation" id="form" #form="ngForm" (ngSubmit)="onLogin()" class="needs-validation" novalidate>
                 <div class="form-outline form-white mb-4">
                   <label class="form-label" for="nombreUsuario">Usuario</label>
                   <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control form-control-lg"

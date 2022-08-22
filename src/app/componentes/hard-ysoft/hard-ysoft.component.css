@@ -24,6 +24,8 @@
     padding: 10px;
     text-transform: uppercase;
     justify-content: center;
+    border: double 3px #38bbc3;
+    border-radius: 20px;
 }
 
 #skills #encabezado #titulo h1:hover{

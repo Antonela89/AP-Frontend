@@ -24,11 +24,32 @@
         <div id="listado">
             <div id="cards" *ngFor="let skills of listaSkills">
                 <div id="circulo">
-                    <circle-progress id="progreso" [percent]="(skills.porcentaje)" [radius]="80" [outerStrokeWidth]="15"
-                        [title]="(skills.nombreSkill)" [imageSrc]="skills.fotoSkill" [imageHeight]="70" [imageWidth]="70"
-                        [showImage]="true" [innerStrokeWidth]="5" [outerStrokeColor]="'#38bbc3'" [innerStrokeColor]="'#ae3452'"
-                        [animation]="true" [animationDuration]="600">
+                    <circle-progress 
+                    id="progreso" 
+                    [percent]="(skills.porcentaje)" 
+                    [radius]="100" 
+                    [units]="''"
+                    [outerStrokeWidth]="10"
+                    [showInnerStroke]="true"
+                    [title]="(skills.nombreSkill)"
+                    [showSubtitle]="false"
+                    [animateTitle]="true"
+                    [titleColor]="'#ffffff'"
+                    [titleFontWeight]="'700'"
+                    [imageSrc]="skills.fotoSkill"
+                    [imageHeight]="70" 
+                    [imageWidth]="70"
+                    [showImage]="false" 
+                    [innerStrokeWidth]="100" 
+                    [outerStrokeColor]="'#38bbc3'" 
+                    [innerStrokeColor]="'#0c0c2c'"
+                    [backgroundPadding]="20"
+                    [animation]="true" 
+                    [animationDuration]="600">
+                    
                     </circle-progress>
+
+                    
                 </div>
                 <div id="botones">
                     <a (click)="openModal('editar', skills)" class="btn btn-primary tooltips" data-bs-placement="top"
@@ -119,7 +140,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="agregarForm.invalid"
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
                     (click)="editarSkills(modificarSkills!.idSkill)">Guardar Cambios</button>
             </div>
         </div>

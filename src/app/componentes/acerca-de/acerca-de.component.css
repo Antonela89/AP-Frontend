@@ -1,3 +1,7 @@
+/* *{
+    border: solid 1px red;
+} */
+
 #presentacion{
     width: 100%;
     padding: 0;
@@ -7,6 +11,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-bottom: solid 3px #ae3452;
 }
 
 /*Renderizado de botones*/
@@ -49,14 +54,24 @@
 
 #presentacion #persona #contenedor1{
     width: 40%;
+    padding: 0;
+}
+
+#presentacion #persona #contenedor1 #foto {
+    padding: 0;
 }
 
 #presentacion #persona #contenedor1 #foto .img-fluid {
-    border-radius: 50%;
+    width: 100%;
+    border-top-left-radius: 20px;
+    object-fit:cover;
 }
 
 #presentacion #persona #contenedor1 #datos {
     width: 100%;
+    background-color:#0c0c2c;
+    border-bottom-left-radius: 20px;
+    color: white;
 }
 
 #presentacion #persona #contenedor1 #datos #nombre, #presentacion #persona #contenedor1 #datos #titulo {
@@ -67,6 +82,10 @@
 
 #presentacion #persona #contenedor2 {
     width: 60%;
+    border: double 3px #38bbc3;
+    border-left: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 #presentacion #persona #contenedor2 #encabezado{

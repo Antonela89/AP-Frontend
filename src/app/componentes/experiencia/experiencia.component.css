@@ -5,6 +5,7 @@
     padding: 0;
     margin: 0;
     border-top: solid 3px white;
+    border-bottom: solid 3px #ae3452;
     position: relative;
     justify-content: space-between;
     align-items: center;
@@ -26,6 +27,8 @@
     padding: 10px;
     text-transform: uppercase;
     justify-content: center;
+    border: double 3px #38bbc3;
+    border-radius: 20px;
 }
 
 #experiencia #encabezado #titulo h1:hover{

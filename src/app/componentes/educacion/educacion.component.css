@@ -25,6 +25,8 @@
     padding: 10px;
     text-transform: uppercase;
     justify-content: center;
+    border: double 3px #38bbc3;
+    border-radius: 20px;
 }
 
 #educacion #encabezado #titulo h1:hover{
@@ -67,6 +69,7 @@
     display: flex;
     justify-content: space-between;
     position: relative;
+
 }
 
 #educacion #listado #texto {

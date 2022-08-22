@@ -31,33 +31,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
-
-  // Array.from(forms).forEach(form => {
-  //   form.addEventListener('submit', event => {
-  //     if (!form.checkValidity()) {
-  //       event.preventDefault()
-  //       event.stopPropagation()
-  //     }
-
-  //     form.classList.add('was-validated')
-  //   }, false)
-  // });
-
-  onLogin(event: Event): void {
-
-    // const forms = document.querySelectorAll('.needs-validation');
-
-    // Array.from(forms).forEach(form => {
-    //     form.addEventListener('submit', event => {
-    //       if (!form.checkValidity()) {
-    //         event.preventDefault()
-    //         event.stopPropagation()
-    //       }
-    
-    //       form.classList.add('was-validated')
-    //     }, false)
-    //   });
-      
+  onLogin(): void {
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password); 
       this.authService.login(this.loginUsuario).subscribe({next: data => {
         this.isLogged = true;
