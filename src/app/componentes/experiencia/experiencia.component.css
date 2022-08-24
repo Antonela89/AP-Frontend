@@ -54,8 +54,8 @@
 
 /*Notificacion base de datos vacia*/
 #experiencia .notificacion{
-    width: 100%;
-    margin: 20px;
+    width: 80%;
+
 }
 
 #experiencia .notificacion .alert{
@@ -64,6 +64,7 @@
 
 #experiencia .notificacion .alert h4{
     text-transform: uppercase;
+    margin: 0;
 }
 
 /*Renderizado de lista*/

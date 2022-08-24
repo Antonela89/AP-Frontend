@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   constructor(private tokenService: TokenService, private authService: AuthService, private router: Router){
   }
 
+
   ngOnInit(): void {
     if(this.tokenService.getToken()) {
       this.isLogged = true;
@@ -31,7 +32,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onLogin(): void {
+  onLogin(event: Event): void {
+    event.preventDefault;
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password); 
       this.authService.login(this.loginUsuario).subscribe({next: data => {
         this.isLogged = true;
@@ -49,3 +51,4 @@ export class LoginComponent implements OnInit {
       }})
     }
   }
+
