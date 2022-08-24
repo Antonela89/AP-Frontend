@@ -119,6 +119,13 @@
     }
 }
 
+/*Responsivo para pantallas menores a 425px*/
+@media only screen and (max-width: 425px) {
+    #banner .titulo{
+        top: 200px;
+    }
+}
+
 /*Responsivo para pantallas menores a 320px*/
 @media only screen and (max-width: 320px) {
     #encabezado .redes #social {
