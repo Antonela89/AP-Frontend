@@ -33,10 +33,8 @@
                     [showInnerStroke]="true"
                     [title]="(skills.nombreSkill)"
                     [showSubtitle]="false"
-                    [animateTitle]="true"
                     [titleColor]="'#ffffff'"
                     [titleFontWeight]="'700'"
-                    [imageSrc]="skills.fotoSkill"
                     [imageHeight]="70" 
                     [imageWidth]="70"
                     [showImage]="false" 
@@ -46,7 +44,6 @@
                     [backgroundPadding]="20"
                     [animation]="true" 
                     [animationDuration]="600">
-                    
                     </circle-progress>
 
                     
@@ -86,11 +83,11 @@
                         <input type="text" (keyup)="handleChange($event)" ngModel name="nombreSkill"
                             class="form-control" id="institucion" required>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="fotoSkill" class="col-form-label">Imagen Skill</label>
                         <input type="text" (keyup)="handleChange($event)" ngModel name="fotoSkill" class="form-control"
                             id="titulo" required>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="porcentaje" class="col-form-label">Porcentaje</label>
                         <input type="text" (keyup)="handleChange($event)" ngModel name="porcentaje" class="form-control"
@@ -126,11 +123,11 @@
                         <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarSkills?.nombreSkill}}"
                             name="nombreSkill" class="form-control" id="nombreSkill" required>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="fotoSkill" class="col-form-label">fotoSkill</label>
                         <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarSkills?.fotoSkill}}"
                             name="fotoSkill" class="form-control" id="fotoSkill" required>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="porcentaje" class="col-form-label">Porcentaje</label>
                         <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarSkills?.porcentaje}}"

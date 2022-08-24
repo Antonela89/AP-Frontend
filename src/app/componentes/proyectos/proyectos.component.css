@@ -40,7 +40,7 @@
     padding: 5px;
     height: 40px;
     width: 40px;
-    right: 20px;
+    right: 40px;
 }
 
 #proyectos #encabezado a svg {
@@ -90,7 +90,6 @@
 #proyectos #contenedor_proyectos #listado #card #header {
     width: 100%;
     position: relative;
-
 }
 
 #proyectos #contenedor_proyectos #listado #card #header #img{
@@ -176,4 +175,37 @@
 }
 
 /*Responsivo*/
+@media only screen and (max-width:425px) {
+    #proyectos #encabezado a {
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+        right: 15px;
+    }
 
+    #presentacion #botones a{
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+    }
+
+    #proyectos #encabezado #titulo h1{
+        padding: 5px;
+    }
+
+    #proyectos #contenedor_proyectos #listado #card{
+        width: 90%;
+        margin: 10px;
+    }
+
+    #proyectos #contenedor_proyectos #listado #card #footer #botones {
+        height: 20px;
+    }
+
+    #proyectos #contenedor_proyectos #listado #card #footer #botones a {
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+    }
+
+}

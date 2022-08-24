@@ -58,6 +58,12 @@
 }
 
 /*Responsivo*/
+@media only screen and (max-width: 768px) {
+    #banner .titulo{
+        top: 280px;
+    }
+}
+
 @media only screen and (max-width: 425px) {
     #encabezado {
         width: 100%;

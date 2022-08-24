@@ -41,7 +41,7 @@
     height: 40px;
     width: 40px;
     padding: 5px;
-    right: 20px;
+    right: 40px;
 }
 
 #educacion #encabezado a svg {
@@ -79,8 +79,9 @@
 }
 
 #educacion #listado #botones {
+    position: relative;
     padding: 0;
-    margin-right: 20px;
+    margin-right: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,3 +122,30 @@
 }
 
 /*Responsivo*/
+@media only screen and (max-width:425px) {
+    #educacion #encabezado a {
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+        right: 15px;
+    }
+    
+    #educacion #listado #botones {
+        width: 20px;
+        margin-right: 15px;
+    }
+
+    #educacion #listado #botones a{
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+    }
+
+    #educacion #encabezado #titulo h1{
+        padding: 5px;
+    }
+
+    #educacion #listado #texto {
+        margin: 10px;
+    }
+}

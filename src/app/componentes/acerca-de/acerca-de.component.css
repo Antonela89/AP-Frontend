@@ -16,9 +16,9 @@
 
 /*Renderizado de botones*/
 #presentacion #botones{
-    position: relative;
+    position: absolute;
     width: 40px;
-    right: 20px;
+    right: 35px;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -47,7 +47,7 @@
 /*Renderizado de persona*/
 #presentacion #persona{
     position: relative;
-    width: 90%;
+    width: 100%;
     margin: 20px;
     display: flex;
 }
@@ -86,6 +86,9 @@
     border-left: none;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 #presentacion #persona #contenedor2 #encabezado{
@@ -102,9 +105,17 @@
 color: #ae3452;
 }
 
+#presentacion #persona #contenedor2 #parrafo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
 #presentacion #persona #contenedor2 #parrafo p {
     width: 100%;
-    text-align: center;
+    padding-left: 45px;
+    padding-right: 45px;
 }
 
 /*Notificacion base de datos vacia*/
@@ -146,5 +157,32 @@ color: #ae3452;
     }
 }
 
+@media only screen and (max-width:425px) {
+    #presentacion #persona{
+        margin: 10px;
+    }
 
+    #presentacion #botones {
+        width: 20px;
+        right: 15px;
+    }
+
+    #presentacion #botones a{
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+    }
+
+    #presentacion #persona #contenedor2 #encabezado h1 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 5px;
+    }
+
+    #presentacion #persona #contenedor2 #parrafo p {
+        margin-bottom: 2px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
 

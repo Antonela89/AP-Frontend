@@ -40,7 +40,7 @@
     height: 40px;
     width: 40px;
     padding: 5px;
-    right: 20px;
+    right: 40px;
 }
 
 #skills #encabezado a svg {
@@ -78,25 +78,26 @@
 #skills #contenedor_skills #listado #cards {
     width: 25%;
     display: flex;
+    flex-direction: column;
 }
 
 #skills #contenedor_skills #listado #cards #circulo {
     width: 100%;
-
 }
+
 #skills #contenedor_skills #listado #cards #circulo #progreso{
     width: 100%;
     display:flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 #skills #contenedor_skills #listado #cards #botones {
+    position: relative;
     width: 100%;
     padding: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 
 }
@@ -106,7 +107,8 @@
     width: 40px;
     height: 40px;
     padding: 5px;
-    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center
@@ -135,4 +137,45 @@
 }
 
 /*Responsivo*/
+@media only screen and (max-width:425px) {
+    #skills #encabezado a {
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+        right: 15px;
+    }
+    #presentacion #botones {
+        width: 20px;
+    }
+
+    #presentacion #botones a{
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+    }
+
+    #skills #encabezado #titulo h1{
+        padding: 5px;
+    }
+
+    #skills #contenedor_skills #listado #cards {
+        width: 50%;
+    }
+
+    #skills #contenedor_skills #listado #cards #circulo #progreso {
+        width: 100%;
+        height: 190px;
+    }
+
+    #skills #contenedor_skills #listado #cards #botones {
+        height: 20px;
+        margin-bottom: 20px;
+    }
+
+    #skills #contenedor_skills #listado #cards #botones a {
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+    }
+}
 
