@@ -99,6 +99,11 @@ export class AcercaDeComponent implements OnInit {
     formData.append('titulo', this.formToSend.titulo);
     formData.append('acercaMi', this.formToSend.acercaMi);
     formData.append('urlFoto', this.formToSend.urlFoto);
+    formData.append('likedinUrl',this.formToSend.likedinUrl);
+    formData.append('githubUrl',this.formToSend.githubUrl);
+    formData.append('facebookUrl',this.formToSend.facebookUrl);
+    formData.append('instagramUrl',this.formToSend.instagramUrl);
+    formData.append('imgBanner',this.formToSend.imgBanner);
 
     this.personaService.updatePersona(formData, id).subscribe({
       next: (response: Persona) => {

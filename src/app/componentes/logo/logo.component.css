@@ -57,6 +57,20 @@
     font-size: 40px;
 }
 
+/*Notificacion base de datos vacia*/
+#banner .notificacion{
+    width: 80%;
+}
+
+#banner .notificacion .alert{
+    width: 100%;
+    margin: 0;
+}
+
+#banner .notificacion .alert h4{
+    text-transform: uppercase;
+}
+
 /*Responsivo*/
 @media only screen and (max-width: 768px) {
     #banner .titulo{
