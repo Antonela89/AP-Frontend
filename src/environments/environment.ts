@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // Api:'https://backend-ap-anto.herokuapp.com',
-  Api: 'http://localhost:8080',
+  Api:'https://backend-ap-anto.herokuapp.com',
+  //Api: 'http://localhost:8080',
   isLogged: true
 };
 
