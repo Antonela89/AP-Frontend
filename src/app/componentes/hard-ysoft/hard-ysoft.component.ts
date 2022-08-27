@@ -66,12 +66,13 @@ export class HardYSoftComponent implements OnInit {
     button.click();
   }
 
-  public handleAdd(){
+  public handleAdd(event: Event){
+    event.preventDefault;
     this.skillsService.createSkills(this.formToSend).subscribe({
       next:(response: Skills)=>{
           console.log(response);
           this.getSkills();
-          this.router.navigate(['']);
+          window.location.reload();
           alert("¡Enviado correctamente!");
         },
       error: (error: HttpErrorResponse)=>{
@@ -85,7 +86,7 @@ export class HardYSoftComponent implements OnInit {
       next:(response: Skills) => {
         console.log(response); 
         this.getSkills();
-        this.router.navigate(['']);
+        window.location.reload();
         alert("¡Modificado correctamente!");
       },
       error: (error: HttpErrorResponse)=>{
@@ -99,7 +100,7 @@ export class HardYSoftComponent implements OnInit {
       next:(response: void) => 
       {console.log(response), 
         this.getSkills();
-        this.router.navigate(['']);
+        window.location.reload();
         alert("¡Eliminado correctamente!");
     },error: (error: HttpErrorResponse)=>
     {alert(error.message);

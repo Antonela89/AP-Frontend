@@ -97,7 +97,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" (click)="handleAdd()" class="btn btn-primary"
+                <button type="submit" (click)="handleAdd($event)" class="btn btn-primary"
                     [disabled]="agregarForm.invalid">Agregar</button>
             </div>
         </div>
@@ -120,7 +120,7 @@
                 <form #editForm="ngForm">
                     <div class="form-group">
                         <label for="nombreSkill" class="col-form-label">nombreSkill</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarSkills?.nombreSkill}}"
+                        <input type="text" (keyup)="handleChange($event)" ngModel
                             name="nombreSkill" class="form-control" id="nombreSkill" required>
                     </div>
                     <!-- <div class="form-group">
@@ -130,7 +130,7 @@
                     </div> -->
                     <div class="form-group">
                         <label for="porcentaje" class="col-form-label">Porcentaje</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarSkills?.porcentaje}}"
+                        <input type="text" (keyup)="handleChange($event)" ngModel
                             name="porcentaje" class="form-control" id="porcentaje" required>
                     </div>
                 </form>

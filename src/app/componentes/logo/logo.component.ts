@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {} from '@angular/animations';
 import {TokenService} from 'src/app/service/token.service';
 import { environment } from 'src/environments/environment';
 import { Persona } from 'src/app/model/persona';

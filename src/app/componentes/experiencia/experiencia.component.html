@@ -83,7 +83,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" (click)="handleAdd()" class="btn btn-primary"
+                <button type="submit" (click)="handleAdd($event)" class="btn btn-primary"
                     [disabled]="agregarForm.invalid">Agregar</button>
             </div>
         </div>
@@ -130,7 +130,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="agregarForm.invalid"
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
                     (click)="editarExperiencia(modificarExperiencia!.idExp)">Guardar Cambios</button>
             </div>
         </div>

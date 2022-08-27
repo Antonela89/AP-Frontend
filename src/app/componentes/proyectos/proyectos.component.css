@@ -166,6 +166,10 @@
     border-bottom: solid 2px #ae3452;
 }
 
+.modal-content .modal-header .close{
+    border: none;
+}
+
 .modal-content .modal-body input {
     border: solid 1px #38bbc3;
 }

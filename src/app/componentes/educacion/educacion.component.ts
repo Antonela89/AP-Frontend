@@ -70,12 +70,13 @@ export class EducacionComponent implements OnInit {
     button.click();
   }
 
-  public handleAdd(){
+  public handleAdd(event: Event){
+    event.preventDefault;
     this.educacionService.createEducacion(this.formToSend).subscribe({
       next:(response: Educacion)=>{
           console.log(response);
           this.getEducaciones();
-          this.router.navigate(['']);
+          window.location.reload();
           alert("¡Enviado correctamente!");
         },
       error: (error: HttpErrorResponse)=>{
@@ -89,7 +90,7 @@ export class EducacionComponent implements OnInit {
       next:(response: Educacion) => {
         console.log(response); 
         this.getEducaciones();
-        this.router.navigate(['']);
+        window.location.reload();
         alert("Modificado correctamente")
       },
       error: (error: HttpErrorResponse)=>{
@@ -103,7 +104,7 @@ export class EducacionComponent implements OnInit {
       next:(response: void) => {
         console.log(response), 
         this.getEducaciones();
-        this.router.navigate(['']);
+        window.location.reload();;
         alert("¡Eliminado correctamente!");
     },error: (error: HttpErrorResponse)=>{
       alert(error.message); 

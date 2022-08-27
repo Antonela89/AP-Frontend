@@ -67,12 +67,13 @@ export class ProyectosComponent implements OnInit {
     button.click();
   }
 
-  public handleAdd(){
+  public handleAdd(event: Event){
+    event.preventDefault;
     this.proyectoService.createProyecto(this.formToSend).subscribe({
       next:(response: Proyecto)=>{
           console.log(response);
           this.getProyectos();
-          this.router.navigate(['']);
+          window.location.reload();
           alert("¡Enviado correctamente!");
         },
       error: (error: HttpErrorResponse)=>{
@@ -86,7 +87,7 @@ export class ProyectosComponent implements OnInit {
       next:(response: Proyecto) => {
         console.log(response); 
         this.getProyectos();
-        this.router.navigate(['']);
+        window.location.reload();
         alert("¡Modificado correctamente!");
       },
       error: (error: HttpErrorResponse)=>{
@@ -99,9 +100,9 @@ export class ProyectosComponent implements OnInit {
     this.proyectoService.deleteProyecto(id).subscribe({
       next:(response: void) => {
         console.log(response);
-         this.getProyectos();
-         this.router.navigate(['']);
-         alert("¡Eliminado correctamente!");
+        this.getProyectos();
+        window.location.reload();
+        alert("¡Eliminado correctamente!");
     },error: (error: HttpErrorResponse)=>{
       alert(error.message);
       this.router.navigate(['']);

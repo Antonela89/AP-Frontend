@@ -68,12 +68,13 @@ export class ExperienciaComponent implements OnInit {
     button.click();
   }
 
-  public handleAdd(){
+  public handleAdd(event: Event){
+    event.preventDefault;
     this.experienciaService.createExperiencia(this.formToSend).subscribe({
       next:(response: Experiencia)=>{
           console.log(response);
           this.getExperiencias();
-          this.router.navigate(['']);
+          window.location.reload();
           alert("¡Enviado correctamente!");
         },
       error: (error: HttpErrorResponse)=>{
@@ -87,7 +88,7 @@ export class ExperienciaComponent implements OnInit {
       next:(response: Experiencia) => {
         console.log(response); 
         this.getExperiencias();
-        this.router.navigate(['']);
+        window.location.reload();
         alert("¡Modificado correctamente!");
       },
       error: (error: HttpErrorResponse)=>{
@@ -101,7 +102,7 @@ export class ExperienciaComponent implements OnInit {
       next:(response: void) => 
       {console.log(response), 
         this.getExperiencias();
-        this.router.navigate(['']);
+        window.location.reload();
         alert("¡Eliminado correctamente!");
     },error: (error: HttpErrorResponse)=>
     {alert(error.message);
