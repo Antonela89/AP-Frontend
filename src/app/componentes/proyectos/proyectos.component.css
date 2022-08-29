@@ -90,16 +90,18 @@
 #proyectos #contenedor_proyectos #listado #card #header {
     width: 100%;
     position: relative;
-}
-
-#proyectos #contenedor_proyectos #listado #card #header #img{
-    width: 100%;
-    height: 295px;
-    object-fit: contain;
-    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+}
+
+#proyectos #contenedor_proyectos #listado #card #header #img{
+    position: relative;
+    width: 90%;
+    height: 295px;
+    object-fit: contain;
+    border-radius: 20px;
 }
 
 #proyectos #contenedor_proyectos #listado #card #body{
@@ -107,10 +109,12 @@
     text-align: center;
     border-top: double 3px #ae3452;
     border-bottom: double 3px #ae3452;
+    padding: 20px; 
 }
 
 #proyectos #contenedor_proyectos #listado #card #body #nombre{
     width: 100%;
+    padding-bottom: 10px;
     text-transform: uppercase;
     margin: 0;
 }
@@ -123,10 +127,13 @@
 #proyectos #contenedor_proyectos #listado #card #footer{
     width: 100%;
     text-align: center;
+    padding: 20px;
 }
 
 #proyectos #contenedor_proyectos #listado #card #footer a{
     text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
     color: black;
 }
 
@@ -137,6 +144,7 @@
 #proyectos #contenedor_proyectos #listado #card #footer #botones {
     height: 40px;
     display: flex;
+
     margin: 5px;
     justify-content: center;
     align-items: center;
@@ -146,6 +154,7 @@
     width: 40px;
     height: 40px;
     padding: 5px;
+    margin-top: 10px;
     margin-left: 5px;
     display: flex;
     justify-content: center;
