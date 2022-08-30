@@ -19,6 +19,7 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { interceptorProvider } from './service/interceptor-service';
+import { LoaderComponent } from './componentes/loader/loader.component';
 
 
 
@@ -35,6 +36,7 @@ import { interceptorProvider } from './service/interceptor-service';
     FooterComponent,
     LoginComponent,
     PortfolioComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
