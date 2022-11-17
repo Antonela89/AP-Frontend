@@ -117,22 +117,22 @@
                 <form #editForm="ngForm">
                     <div class="form-group">
                         <label for="empresa" class="col-form-label">Empresa</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="empresa" class="form-control"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarExperiencia?.empresa}}" name="empresa" class="form-control"
                             id="empresa" required>
                     </div>
                     <div class="form-group">
                         <label for="descripcion" class="col-form-label">Descripción</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="descripcion"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarExperiencia?.descripcion}}" name="descripcion"
                             class="form-control" id="descripcion" required>
                     </div>
                     <div class="form-group">
                         <label for="anoInicio" class="col-form-label">Año Inicio</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="anoInicio" class="form-control"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarExperiencia?.anoInicio}}" name="anoInicio" class="form-control"
                             id="anoInicio" required>
                     </div>
                     <div class="form-group">
                         <label for="anoFin" class="col-form-label">Año Fin</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="anoFin" class="form-control"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarExperiencia?.anoFin}}" name="anoFin" class="form-control"
                             id="anoFin" required>
                     </div>
                 </form>

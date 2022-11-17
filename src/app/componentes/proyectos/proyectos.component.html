@@ -120,22 +120,22 @@
                 <form #editForm="ngForm">
                     <div class="form-group">
                         <label for="nombreProyecto" class="col-form-label">Nombre Proyecto</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="nombreProyecto"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarProyecto?.nombreProyecto}}" name="nombreProyecto"
                             class="form-control" id="nombreProyecto" required>
                     </div>
                     <div class="form-group">
                         <label for="descripcion" class="col-form-label">Descripción</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="descripcion"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarProyecto?.descripcion}}" name="descripcion"
                             class="form-control" id="descripcion" required>
                     </div>
                     <div class="form-group">
                         <label for="url" class="col-form-label">Url Proyecto</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="url" class="form-control"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarProyecto?.url}}" name="url" class="form-control"
                             id="url" required>
                     </div>
                     <div class="form-group">
                         <label for="fotoProyeto" class="col-form-label">Imagen Proyecto</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="fotoProyecto"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarProyecto?.fotoProyecto}}" name="fotoProyecto"
                             class="form-control" id="fotoProyeto" required>
                     </div>
                 </form>

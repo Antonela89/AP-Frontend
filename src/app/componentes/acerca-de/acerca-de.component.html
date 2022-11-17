@@ -149,52 +149,52 @@
                 <form #editForm="ngForm">
                     <div class="form-group">
                         <label for="nombre" class="col-form-label">Nombre</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="nombre" class="form-control"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarPersona?.nombre}}" name="nombre" class="form-control"
                             id="nombre" required>
                     </div>
                     <div class="form-group">
                         <label for="apellido" class="col-form-label">Apellido</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="apellido" class="form-control"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarPersona?.apellido}}" name="apellido" class="form-control"
                             id="apellido" required>
                     </div>
                     <div class="form-group">
                         <label for="titulo" class="col-form-label">Titulo</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="titulo" class="form-control"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarPersona?.titulo}}" name="titulo" class="form-control"
                             id="titulo" required>
                     </div>
                     <div class="form-group">
                         <label for="acercaMi" class="col-form-label">Acerca de mi</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="acercaMi" class="form-control"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarPersona?.acercaMi}}" name="acercaMi" class="form-control"
                             id="acercaMi" required>
                     </div>
                     <div class="form-group">
                         <label for="urlFoto" class="col-form-label">Foto</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="urlFoto" class="form-control"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarPersona?.urlFoto}}" name="urlFoto" class="form-control"
                             id="urlFoto" required>
                     </div>
                     <div class="form-group">
                         <label for="likedinUrl" class="col-form-label">Linkedin</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="likedinUrl" class="form-control"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarPersona?.likedinUrl}}" name="likedinUrl" class="form-control"
                             id="likedinUrl" required>
                     </div>
                     <div class="form-group">
                         <label for="githubUrl" class="col-form-label">Github</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="githubUrl" class="form-control"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarPersona?.githubUrl}}" name="githubUrl" class="form-control"
                             id="githubUrl" required>
                     </div>
                     <div class="form-group">
                         <label for="facebookUrl" class="col-form-label">Facebook</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="facebookUrl"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarPersona?.facebookUrl}}"del name="facebookUrl"
                             class="form-control" id="facebookUrl" required>
                     </div>
                     <div class="form-group">
                         <label for="instagramUrl" class="col-form-label">Instagram</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="instagramUrl"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarPersona?.instagramUrl}}" name="instagramUrl"
                             class="form-control" id="instagramUrl" required>
                     </div>
                     <div class="form-group">
                         <label for="imgBanner" class="col-form-label">Banner</label>
-                        <input type="text" (keyup)="handleChange($event)" ngModel name="imgBanner" class="form-control"
+                        <input type="text" (keyup)="handleChange($event)" ngModel="{{modificarPersona?.imgBanner}}" name="imgBanner" class="form-control"
                             id="imgBanner" required>
                     </div>
                 </form>

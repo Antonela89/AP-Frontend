@@ -6,6 +6,7 @@ import { EducacionService } from 'src/app/service/educacion.service';
 import { TokenService } from 'src/app/service/token.service';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-educacion',
