@@ -49,8 +49,6 @@ export class EducacionComponent implements OnInit {
       ...this.formToSend,
       [inputName]: inputValue
     }
-
-    console.log(this.formToSend)
   }
 
   openModal(mode:String, educacion?: Educacion ): void{
@@ -58,6 +56,7 @@ export class EducacionComponent implements OnInit {
     const button=document.createElement('button');
     button.style.display ='none';
     button.setAttribute('data-toggle', 'modal');
+
     if(mode === 'agregar') {
       button.setAttribute('data-target', '#agregarEducacionModal');
     } else if (mode === 'eliminar') {
@@ -65,6 +64,7 @@ export class EducacionComponent implements OnInit {
       button.setAttribute('data-target', '#eliminarEducacionModal');
     } else if (mode === 'editar') {
       this.modificarEducacion = educacion;
+      this.formToSend = educacion;
       button.setAttribute('data-target', '#editarEducacionModal');
     }
     container?.appendChild(button);

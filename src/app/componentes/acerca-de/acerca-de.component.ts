@@ -1,10 +1,12 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 import { Persona } from 'src/app/model/persona';
 import { PersonaService } from 'src/app/service/persona.service';
 import { TokenService } from 'src/app/service/token.service';
 import { environment } from 'src/environments/environment';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -35,6 +37,8 @@ export class AcercaDeComponent implements OnInit {
 
   getPersonas() {
     this.personaService.getPersonas().subscribe(data => {
+      this.formToSend = data[0];
+      console.log(this.formToSend)
       this.persona = data[data.length - 1];
     }, err => {
       alert(err);

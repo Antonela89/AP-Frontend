@@ -49,7 +49,7 @@ export class ProyectosComponent implements OnInit {
     console.log(this.formToSend)
   }
 
-  openModal(mode:String, Proyecto?: Proyecto, ): void{
+  openModal(mode:String, proyecto?: Proyecto, ): void{
     const container = document.getElementById('main-container');
     const button=document.createElement('button');
     button.style.display ='none';
@@ -57,10 +57,11 @@ export class ProyectosComponent implements OnInit {
     if(mode === 'agregar') {
       button.setAttribute('data-target', '#agregarProyectoModal');
     } else if (mode === 'eliminar') {
-      this.borrarProyecto = Proyecto;
+      this.borrarProyecto = proyecto;
       button.setAttribute('data-target', '#eliminarProyectoModal');
     } else if (mode === 'editar') {
-      this.modificarProyecto = Proyecto;
+      this.modificarProyecto = proyecto;
+      this.formToSend = proyecto;
       button.setAttribute('data-target', '#editarProyectoModal');
     }
     container?.appendChild(button);

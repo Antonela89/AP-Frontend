@@ -48,7 +48,7 @@ export class HardYSoftComponent implements OnInit {
     console.log(this.formToSend)
   }
 
-  openModal(mode:String, educacion?: Skills, ): void{
+  openModal(mode:String, skill?: Skills, ): void{
     const container = document.getElementById('main-container');
     const button=document.createElement('button');
     button.style.display ='none';
@@ -56,10 +56,11 @@ export class HardYSoftComponent implements OnInit {
     if(mode === 'agregar') {
       button.setAttribute('data-target', '#agregarEducacionModal');
     } else if (mode === 'eliminar') {
-      this.borrarSkills = educacion;
+      this.borrarSkills = skill;
       button.setAttribute('data-target', '#eliminarEducacionModal');
     } else if (mode === 'editar') {
-      this.modificarSkills = educacion;
+      this.modificarSkills = skill;
+      this.formToSend = skill;
       button.setAttribute('data-target', '#editarEducacionModal');
     }
     container?.appendChild(button);

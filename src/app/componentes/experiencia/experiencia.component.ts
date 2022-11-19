@@ -50,7 +50,7 @@ export class ExperienciaComponent implements OnInit {
     console.log(this.formToSend)
   }
 
-  openModal(mode:String, educacion?: Experiencia, ): void{
+  openModal(mode:String, experiencia?: Experiencia, ): void{
     const container = document.getElementById('main-container');
     const button=document.createElement('button');
     button.style.display ='none';
@@ -58,10 +58,11 @@ export class ExperienciaComponent implements OnInit {
     if(mode === 'agregar') {
       button.setAttribute('data-target', '#agregarEducacionModal');
     } else if (mode === 'eliminar') {
-      this.borrarExperiencia = educacion;
+      this.borrarExperiencia = experiencia;
       button.setAttribute('data-target', '#eliminarEducacionModal');
     } else if (mode === 'editar') {
-      this.modificarExperiencia = educacion;
+      this.modificarExperiencia = experiencia;
+      this.formToSend = experiencia;
       button.setAttribute('data-target', '#editarEducacionModal');
     }
     container?.appendChild(button);
